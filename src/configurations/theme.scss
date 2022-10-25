@@ -1,0 +1,22 @@
+$_lightTheme: (
+        "primary": #F75050,
+        "primaryTextColor": #FFFFFF,
+);
+
+@function setThemeColors($theme) {
+  $appColors: (
+          "primary": map-get($theme, "primary"),
+          "primaryTextColor": map-get($theme, "primaryTextColor"),
+  );
+
+  @return $appColors;
+}
+
+$THEME: setThemeColors($_lightTheme);
+
+$primary: map-get($THEME, "primary");
+$primaryTextColor: map-get($THEME, "primaryTextColor");
+
+//@function getColor($color) {
+//  @return map-get($THEME, $color);
+//}

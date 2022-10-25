@@ -1,0 +1,5 @@
+@use 'src/configurations/theme' as theme;
+
+* {
+  color: theme.$primary;
+}
