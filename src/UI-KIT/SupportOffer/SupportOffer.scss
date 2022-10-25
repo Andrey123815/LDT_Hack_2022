@@ -1,0 +1,7 @@
+@use 'src/configurations/theme' as theme;
+
+.support-offer {
+  color: theme.$supportOffer;
+  margin-top: 20px;
+  cursor: pointer;
+}
