@@ -1,0 +1,10 @@
+.login-page {
+  position: absolute;
+  top: 10%;
+
+  &__content {
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
