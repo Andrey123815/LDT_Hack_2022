@@ -4,6 +4,7 @@ $_lightTheme: (
         "inputBackground": #F3F4F6,
         "inputTextColor": #BDBEBF,
         "supportOffer": #BDBEBF,
+        "pageTitleColor": #464646,
 );
 
 @function setThemeColors($theme) {
@@ -13,6 +14,7 @@ $_lightTheme: (
           "inputBackground": map-get($theme, "inputBackground"),
           "inputTextColor": map-get($theme, "inputTextColor"),
           "supportOffer": map-get($theme, "supportOffer"),
+          "pageTitleColor": map-get($theme, "pageTitleColor"),
   );
 
   @return $appColors;
@@ -25,3 +27,4 @@ $primaryTextColor: map-get($THEME, "primaryTextColor");
 $inputBackground: map-get($THEME, "inputBackground");
 $inputTextColor: map-get($THEME, "inputTextColor");
 $supportOffer: map-get($THEME, "supportOffer");
+$pageTitleColor: map-get($THEME, "pageTitleColor");
