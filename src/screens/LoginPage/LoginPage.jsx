@@ -3,6 +3,7 @@ import Input from "../../UI-KIT/Input/Input.jsx";
 import SimpleButton from "../../UI-KIT/SimpleButton/SimpleButton.jsx";
 import './LoginPage.scss';
 import { useNavigate } from "react-router-dom";
+import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 
 function LoginPage() {
   const width = '85%';
@@ -13,7 +14,7 @@ function LoginPage() {
         <img style={{marginTop: "15%", marginBottom: "10%"}} src="vdnh.svg" width="55%" alt="ВДНХ"/>
         <Input placeholder="Телефон или e-mail" width={width}/>
         <Input placeholder="Пароль" width={width}/>
-        <SimpleButton width={width} marginTop="4%" onClick={() => navigate('/route-selection')}>
+        <SimpleButton width={width} marginTop="4%" onClick={() => navigate(NAV_ROUTES.routeSelect)}>
           Войти
         </SimpleButton>
       </div>

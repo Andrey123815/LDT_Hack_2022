@@ -1,0 +1,43 @@
+.format-type-item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  width: 85%;
+  height: 100px;
+
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 20px;
+  padding-right: 40px;
+
+  background: #FCFCFC;
+  box-shadow: 15px 4px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  & * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  &__description {
+    font-weight: 600;
+    line-height: 18px;
+    align-content: start;
+    width: 130px;
+    text-align: left;
+  }
+  &__arrow {
+    height: 20%;
+  }
+}
