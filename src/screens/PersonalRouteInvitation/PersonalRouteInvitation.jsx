@@ -7,7 +7,7 @@ import SimpleButton from "../../UI-KIT/SimpleButton/SimpleButton.jsx";
 import {useNavigate} from "react-router-dom";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 
-function PersonalRouteInvitation(props) {
+function PersonalRouteInvitation() {
   const navigate = useNavigate();
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.personalRouteInvitation}>
