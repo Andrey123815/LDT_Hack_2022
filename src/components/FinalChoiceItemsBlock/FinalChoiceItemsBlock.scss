@@ -1,0 +1,37 @@
+@use 'src/configurations/theme' as theme;
+
+@mixin base-container {
+  display: flex;
+  flex-direction: row;
+  color: #232F34;
+}
+
+.choice-item-block > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.choice-item-block {
+  &__header {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: theme.$primary;
+  }
+
+  &__items {
+    &_interests {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include base-container;
+    }
+    &_company {
+
+      @include base-container;
+    }
+    &_transport, &_free-time {
+      //justify-content: space-around;
+      @include base-container;
+    }
+  }
+}

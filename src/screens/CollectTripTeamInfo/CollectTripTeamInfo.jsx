@@ -9,7 +9,6 @@ import StandardButtonsBlock from "../../components/StandardButtonsBlock/Standard
 import {MAIN_VARIANTS, ADDITIONAL_VARIANTS} from "../../configurations/defaultListsItems/teamTrip.js";
 import {generateDefaultArr} from "../../libraries/generator.js";
 
-
 function CollectTripTeamInfo() {
   const [mainCategories, setMainCategories] =
     useState(generateDefaultArr(MAIN_VARIANTS.length));
