@@ -5,7 +5,7 @@ function QuestionnaireHeaderIcon(props) {
   const size = props.size === 'small' ? '120px' : '214px';
   return (
     <>
-      <img style={{marginTop: props.size === 'small' ? '55px' : '40px'}} src="/vdnh.svg" width={size} height={size} alt="Эмблема ВДНХ" />
+      <img style={{marginTop: props.size === 'small' ? '55px' : '40px'}} src="/images/vdnh.svg" width={size} height={size} alt="Эмблема ВДНХ" />
     </>
   );
 }

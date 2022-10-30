@@ -6,4 +6,8 @@
   font-weight: 600;
   color: theme.$pageTitleColor;
   margin-top: 20px;
+
+  @media screen and (min-width: 500px)  {
+    margin-top: 30px;
+  }
 }
