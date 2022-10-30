@@ -1,18 +1,19 @@
 import React from 'react';
+import './QuestionnaireConfirmation.scss';
 import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../components/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 
-function QuestionnaireAnswersConfirmation(props) {
+function QuestionnaireConfirmation(props) {
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.personalRouteInvitation}>
       <div className="personal-route-invitation">
         <QuestionnaireHeaderIcon size='large' />
-        <PageTitle>Подберем персональный маршрут по ВДНХ</PageTitle>
+        <PageTitle>Сколько у вас есть свободного времени для маршрута?</PageTitle>
 
       </div>
     </QuestionnaireTemplate>
   );
 }
 
-export default QuestionnaireAnswersConfirmation;
+export default QuestionnaireConfirmation;

@@ -14,7 +14,7 @@ function CollectTransportInfo(props) {
     useState(generateDefaultArr(TRANSPORT_TYPES.length));
 
   return (
-    <QuestionnaireTemplate page={TEMPLATE_TYPE.personalRouteInvitation}>
+    <QuestionnaireTemplate page={TEMPLATE_TYPE.collectTransportInfo}>
       <div className="transport-type">
         <QuestionnaireHeaderIcon size='large' />
         <PageTitle>Как будете передвигаться?</PageTitle>
@@ -32,7 +32,7 @@ function CollectTransportInfo(props) {
             </QuestionnaireChoiceItem>
           )}
         </div>
-        <StandardButtonsBlock navigateTo={NAV_ROUTES.questionnaireAnswersConfirmation} />
+        <StandardButtonsBlock navigateTo={NAV_ROUTES.collectTimingInfo} />
       </div>
     </QuestionnaireTemplate>
   );

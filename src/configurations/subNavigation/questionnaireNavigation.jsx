@@ -2,9 +2,8 @@ import PersonalRouteInvitation from "../../screens/PersonalRouteInvitation/Perso
 import CollectTripTeamInfo from "../../screens/CollectTripTeamInfo/CollectTripTeamInfo.jsx";
 import CollectInterestsInfo from "../../screens/CollectInterestsInfo/CollectInterestsInfo.jsx";
 import CollectTransportInfo from "../../screens/CollectTransportInfo/CollectTransportInfo.jsx";
-import QuestionnaireAnswersConfirmation
-  from "../../screens/QuestionnaireAnswersConfirmation/QuestionnaireAnswersConfirmation.jsx";
 import CollectTimingInfo from "../../screens/CollectTimingInfo/CollectTimingInfo.jsx";
+import QuestionnaireConfirmation from "../../screens/QuestionnaireConfirmation/QuestionnaireConfirmation.jsx";
 
 export const QUEST_NAV_ROUTES = {
   personalRouteInvitation: '/personal-route-invitation',
@@ -12,7 +11,7 @@ export const QUEST_NAV_ROUTES = {
   collectInterestsInfo: '/collect-interests-info',
   collectTransportInfo: '/collect-transport-info',
   collectTimingInfo: '/collect-timing-info',
-  questionnaireAnswersConfirmation: '/questionnaire-answers-confirmation'
+  questionnaireConfirmation: '/questionnaire-answers-confirmation'
 };
 
 export const QUESTIONNAIRE_NAVIGATION = [
@@ -37,7 +36,7 @@ export const QUESTIONNAIRE_NAVIGATION = [
     element: <CollectTimingInfo />
   },
   {
-    path: QUEST_NAV_ROUTES.questionnaireAnswersConfirmation,
-    element: <QuestionnaireAnswersConfirmation />
+    path: QUEST_NAV_ROUTES.questionnaireConfirmation,
+    element: <QuestionnaireConfirmation />
   },
 ];
