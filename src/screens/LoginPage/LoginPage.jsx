@@ -2,8 +2,8 @@ import React from 'react';
 import Input from "../../UI-KIT/Input/Input.jsx";
 import SimpleButton from "../../UI-KIT/SimpleButton/SimpleButton.jsx";
 import './LoginPage.scss';
-import { useNavigate } from "react-router-dom";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
+import {useNavigate} from "react-router-dom";
 
 function LoginPage() {
   const width = '85%';

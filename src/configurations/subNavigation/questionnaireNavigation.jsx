@@ -14,12 +14,5 @@ export const QUESTIONNAIRE_NAVIGATION = [
     path: QUEST_NAV_ROUTES.personalRouteInvitation,
     element: <PersonalRouteInvitation />
   },
-  // {
-  //   path: NAV_ROUTES.verify,
-  //   element: <LoginPage/>
-  // },
-  // {
-  //   path: NAV_ROUTES.routeSelect,
-  //   element: <RouteSelection/>
-  // },
+
 ];

@@ -6,6 +6,7 @@ $_lightTheme: (
         "supportOffer": #BDBEBF,
         "pageTitleColor": #464646,
         "questionnaireBackground": #E22C38,
+        "routeExplanationText": #7E7E80,
 );
 
 @function setThemeColors($theme) {
@@ -17,6 +18,7 @@ $_lightTheme: (
           "supportOffer": map-get($theme, "supportOffer"),
           "pageTitleColor": map-get($theme, "pageTitleColor"),
           "questionnaireBackground": map-get($theme, "questionnaireBackground"),
+          "routeExplanationText": map-get($theme, "routeExplanationText"),
   );
 
   @return $appColors;
@@ -31,3 +33,4 @@ $inputTextColor: map-get($THEME, "inputTextColor");
 $supportOffer: map-get($THEME, "supportOffer");
 $pageTitleColor: map-get($THEME, "pageTitleColor");
 $questionnaireBackground: map-get($THEME, "questionnaireBackground");
+$routeExplanationText: map-get($THEME, "routeExplanationText");

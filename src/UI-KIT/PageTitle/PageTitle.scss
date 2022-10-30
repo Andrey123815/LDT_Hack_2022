@@ -1,11 +1,16 @@
 @use 'src/configurations/theme' as theme;
 
+.personal-route-invitation .page-title {
+  margin-top: 20px;
+}
+
 .page-title {
+  width: 70%;
+
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
   color: theme.$pageTitleColor;
-  margin-top: 20px;
 
   @media screen and (min-width: 500px)  {
     margin-top: 30px;

@@ -1,0 +1,27 @@
+@use 'src/configurations/theme' as theme;
+
+.personal-route-invitation > * {
+  margin: auto;
+}
+
+.personal-route {
+  &__explanation {
+    color: theme.$routeExplanationText;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+
+    width: 75%;
+    margin-top: 25px;
+    margin-bottom: 85px;
+
+    @media screen and (min-width: 500px) {
+      width: 50%;
+      margin: 30px auto 60px auto;
+    }
+
+    &_accent {
+      font-weight: bold;
+    }
+  }
+}
