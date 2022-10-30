@@ -1,0 +1,27 @@
+@use 'src/configurations/theme' as theme;
+
+.trip-team-info > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trip-team-info {
+  &__choice-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    max-width: 70%;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    row-gap: 20px;
+  }
+  &__subtitle {
+    color: theme.$questionnaireSubtitle;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    margin-bottom: 20px;
+  }
+}

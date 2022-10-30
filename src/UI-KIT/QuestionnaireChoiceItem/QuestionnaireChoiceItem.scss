@@ -1,0 +1,28 @@
+@use 'src/configurations/theme' as theme;
+
+@mixin choice-item-base {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 80px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 8px 20px;
+}
+
+.choice-item {
+  &_passive {
+    font-weight: 400;
+    background: theme.$passiveChoiceItemBG;
+    color: theme.$passiveChoiceItemColor;
+    @include choice-item-base;
+  }
+  &_active {
+    font-weight: 700;
+    background: theme.$primary;
+    color: theme.$primaryTextColor;
+    @include choice-item-base;
+  }
+}

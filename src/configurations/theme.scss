@@ -6,7 +6,10 @@ $_lightTheme: (
         "supportOffer": #BDBEBF,
         "pageTitleColor": #464646,
         "questionnaireBackground": #E22C38,
+        "questionnaireSubtitle": #7E7E80,
         "routeExplanationText": #7E7E80,
+        "passiveChoiceItemBG": #F3F4F6,
+        "passiveChoiceItemColor": #BDBEBF,
 );
 
 @function setThemeColors($theme) {
@@ -18,7 +21,11 @@ $_lightTheme: (
           "supportOffer": map-get($theme, "supportOffer"),
           "pageTitleColor": map-get($theme, "pageTitleColor"),
           "questionnaireBackground": map-get($theme, "questionnaireBackground"),
+          "questionnaireSubtitle": map-get($theme, "questionnaireSubtitle"),
           "routeExplanationText": map-get($theme, "routeExplanationText"),
+          "passiveChoiceItemBG": map-get($theme, "passiveChoiceItemBG"),
+          "passiveChoiceItemColor": map-get($theme, "passiveChoiceItemColor"),
+
   );
 
   @return $appColors;
@@ -33,4 +40,7 @@ $inputTextColor: map-get($THEME, "inputTextColor");
 $supportOffer: map-get($THEME, "supportOffer");
 $pageTitleColor: map-get($THEME, "pageTitleColor");
 $questionnaireBackground: map-get($THEME, "questionnaireBackground");
+$questionnaireSubtitle: map-get($THEME, "questionnaireSubtitle");
 $routeExplanationText: map-get($THEME, "routeExplanationText");
+$passiveChoiceItemBG: map-get($THEME, "passiveChoiceItemBG");
+$passiveChoiceItemColor: map-get($THEME, "passiveChoiceItemColor");
