@@ -1,7 +1,7 @@
-export const mainVariants = [
+export const MAIN_VARIANTS = [
   'Один', 'Пара', 'Компанией', 'Семьей'
 ];
 
-export const additionalVariants = [
+export const ADDITIONAL_VARIANTS = [
   'Дети', 'Животные'
 ];

@@ -6,15 +6,15 @@ import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import QuestionnaireChoiceItem from "../../UI-KIT/QuestionnaireChoiceItem/QuestionnaireChoiceItem.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import StandardButtonsBlock from "../../components/StandardButtonsBlock/StandardButtonsBlock.jsx";
-import {additionalVariants, mainVariants} from "../../configurations/teamTrip.js";
+import {MAIN_VARIANTS, ADDITIONAL_VARIANTS} from "../../configurations/defaultListsItems/teamTrip.js";
 import {generateDefaultArr} from "../../libraries/generator.js";
 
 
 function CollectTripTeamInfo() {
   const [mainCategories, setMainCategories] =
-    useState(generateDefaultArr(mainVariants.length));
+    useState(generateDefaultArr(MAIN_VARIANTS.length));
   const [additionalCategories, setAdditionalCategories] =
-    useState(generateDefaultArr(additionalVariants.length));
+    useState(generateDefaultArr(ADDITIONAL_VARIANTS.length));
 
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.personalRouteInvitation}>
@@ -22,7 +22,7 @@ function CollectTripTeamInfo() {
         <QuestionnaireHeaderIcon size='small' />
         <PageTitle>С кем пойдете?</PageTitle>
         <div className="trip-team-info__choice-block">
-          {mainVariants.map((variant, index) =>
+          {MAIN_VARIANTS.map((variant, index) =>
             <QuestionnaireChoiceItem
               key={variant}
               active={mainCategories[index]}
@@ -38,7 +38,7 @@ function CollectTripTeamInfo() {
         </div>
         <span className="trip-team-info__subtitle">С нами будут</span>
         <div className="trip-team-info__choice-block">
-          {additionalVariants.map((item, index) =>
+          {ADDITIONAL_VARIANTS.map((item, index) =>
             <QuestionnaireChoiceItem
               key={item}
               active={additionalCategories[index]}
