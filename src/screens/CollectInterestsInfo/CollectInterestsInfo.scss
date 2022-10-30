@@ -1,0 +1,10 @@
+.interest-info__choice-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 20px;
+  width: 70%;
+
+  margin: 20px auto 30px;
+}

@@ -9,20 +9,21 @@
   text-align: center;
   font-size: 18px;
   line-height: 24px;
-  padding: 8px 20px;
 }
 
 .choice-item {
   &_passive {
     font-weight: 400;
-    background: theme.$passiveChoiceItemBG;
-    color: theme.$passiveChoiceItemColor;
+    background: theme.$passiveElementBG;
+    color: theme.$passiveTextColor;
+    padding: 8px 22px;
     @include choice-item-base;
   }
   &_active {
     font-weight: 700;
     background: theme.$primary;
     color: theme.$primaryTextColor;
+    padding: 8px 15px;
     @include choice-item-base;
   }
 }
