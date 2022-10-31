@@ -13,7 +13,7 @@ function PersonalRouteInvitation() {
     <QuestionnaireTemplate page={TEMPLATE_TYPE.personalRouteInvitation}>
       <div className="personal-route-invitation">
         <QuestionnaireHeaderIcon size='large' />
-        <PageTitle>Подберем персональный маршрут по ВДНХ</PageTitle>
+        <PageTitle marginTop="50px">Подберем персональный маршрут по ВДНХ</PageTitle>
         <div className="personal-route__explanation">
           Ответив на несколько вопросов, вы поможете нам подобрать <span className="personal-route__explanation_accent">подходящие</span> для Вас маршруты
         </div>

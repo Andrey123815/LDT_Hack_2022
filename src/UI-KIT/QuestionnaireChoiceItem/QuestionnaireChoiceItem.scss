@@ -3,18 +3,23 @@
 @mixin choice-item-base {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  min-width: 80px;
+  justify-content: center;
   border-radius: 100px;
   text-align: center;
   font-size: 18px;
   line-height: 24px;
+  cursor: pointer;
 }
 
 .choice-item {
   &_passive {
     font-weight: 400;
+
+    @media screen and (min-width: 500px) {
+      background: #FFFFFF;
+    }
     background: theme.$passiveElementBG;
+
     color: theme.$passiveTextColor;
     padding: 8px 22px;
     @include choice-item-base;

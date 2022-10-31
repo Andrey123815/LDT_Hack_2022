@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SimpleButton from "../../UI-KIT/SimpleButton/SimpleButton.jsx";
 import './LoginPage.scss';
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
@@ -13,6 +13,7 @@ import {
   NumberPhoneFormat, numberServiceSymbols,
 } from "../../libraries/autoInputPrettier.js";
 import {Regex} from "../../configurations/inputValidation.js";
+import InputNotification from "../../components/InputNotification/InputNotification.jsx";
 
 const focus = (e) => {
   if (e.target.value === "") {
@@ -21,10 +22,8 @@ const focus = (e) => {
 }
 
 const keyUp = (e) => {
-  console.log(e.key)
   if (e.keyCode === 8) {
     let inputValue = e.target.value;
-    console.log(inputValue)
     while (numberServiceSymbols.includes(inputValue[inputValue.length - 1])) {
       inputValue = inputValue.slice(0, inputValue.length - 1);
     }
@@ -45,6 +44,18 @@ function LoginPage() {
   const width = isMobile() ? '85%' : '45%';
   const navigate = useNavigate();
 
+  const [isInputValid, setIsInputValid] = useState(true);
+  const [phone, setPhone] = useState('');
+
+  const isValidInputData = () => {
+    setIsInputValid(Regex.validPhone.test(phone));
+  }
+
+  useEffect(() => {
+    isValidInputData()
+  }, [phone]);
+
+
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.verify}>
       <div className="login-page">
@@ -55,14 +66,24 @@ function LoginPage() {
             id="standard-helperText"
             label="Ваш телефон"
             placeholder="+ 7 (999) 999-99-99"
-            // helperText={inputError ? <InputNotification>Упс! Кажется телефон заполнен неправильно</InputNotification> : ''}
             onFocus={focus}
-            onInput={numberAutocomplete}
+            onInput={(e) => {numberAutocomplete(e)}}
+            onChange={(e) => setPhone(e.target.value)}
+            error={!isInputValid}
             onKeyUp={keyUp}
-            variant="standard"
+            variant="filled"
             sx={{width: width}}
           />
-          <SimpleButton onClick={() => navigate(NAV_ROUTES.collectTripTeamInfo)}>Войти</SimpleButton>
+          {!isInputValid &&
+            <InputNotification width={width}>Упс! Кажется телефон заполнен неправильно</InputNotification>
+          }
+          <SimpleButton onClick={() => {
+            if (isInputValid) {
+              navigate(NAV_ROUTES.collectTripTeamInfo);
+            }
+          }}>
+            Войти
+          </SimpleButton>
         </div>
       </div>
     </QuestionnaireTemplate>

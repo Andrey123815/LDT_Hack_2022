@@ -22,6 +22,7 @@ function QuestionnaireTemplate(props) {
   if (showMobileVersion) {
     return (
       <>
+        <BackQuestionnaireArrow isFirstPage={isFirstPage} />
         {props.children}
       </>
     );

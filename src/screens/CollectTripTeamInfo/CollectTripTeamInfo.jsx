@@ -16,11 +16,11 @@ function CollectTripTeamInfo() {
     useState(generateDefaultArr(ADDITIONAL_VARIANTS.length));
 
   return (
-    <QuestionnaireTemplate page={TEMPLATE_TYPE.personalRouteInvitation}>
+    <QuestionnaireTemplate page={TEMPLATE_TYPE.collectTripTeamInfo}>
       <div className="trip-team-info">
         <QuestionnaireHeaderIcon size='small' />
         <PageTitle>С кем пойдете?</PageTitle>
-        <div className="trip-team-info__choice-block">
+        <div className="trip-team-info__choice-block_main">
           {MAIN_VARIANTS.map((variant, index) =>
             <QuestionnaireChoiceItem
               key={variant}
@@ -36,7 +36,7 @@ function CollectTripTeamInfo() {
           )}
         </div>
         <span className="trip-team-info__subtitle">С нами будут</span>
-        <div className="trip-team-info__choice-block">
+        <div className="trip-team-info__choice-block_additional">
           {ADDITIONAL_VARIANTS.map((item, index) =>
             <QuestionnaireChoiceItem
               key={item}

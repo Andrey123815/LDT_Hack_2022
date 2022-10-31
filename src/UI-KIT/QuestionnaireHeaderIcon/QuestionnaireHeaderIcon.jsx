@@ -4,7 +4,7 @@ import {isMobile} from "../../libraries/screenTypeCheck.js";
 
 function QuestionnaireHeaderIcon(props) {
   const isSmallSize = props.size === 'small' && isMobile();
-  const size = props.size === isSmallSize ? '120px' : '214px';
+  const size = isSmallSize ? '120px' : '214px';
   return (
     <>
       <img

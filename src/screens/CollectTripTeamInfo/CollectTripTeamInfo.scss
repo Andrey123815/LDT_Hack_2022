@@ -5,22 +5,32 @@
   margin-right: auto;
 }
 
+@mixin choice-block-base {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 80%;
+  @media screen and (min-width: 500px){
+    max-width: 50%;
+  }
+
+  margin-bottom: 35px;
+  margin-top: 35px;
+  gap: 15px;
+}
+
 .trip-team-info {
   &__choice-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    max-width: 70%;
-    margin-bottom: 35px;
-    margin-top: 35px;
-    row-gap: 20px;
+    &_main, &_additional {
+      @include choice-block-base;
+    }
   }
   &__subtitle {
     color: theme.$questionnaireSubtitle;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 22px;
     line-height: 140%;
     margin-bottom: 20px;
   }

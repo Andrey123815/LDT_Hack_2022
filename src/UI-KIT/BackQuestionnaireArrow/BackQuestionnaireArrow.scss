@@ -4,8 +4,13 @@
   background: #FFFFFF;
   border-radius: 50%;
   position: absolute;
-  left: 75px;
-  top: 75px;
+
+  @media screen and (min-width: 500px) {
+    left: 75px;
+    top: 75px;
+  }
+  left: 30px;
+  top: 50px;
   cursor: pointer;
 
   & img {

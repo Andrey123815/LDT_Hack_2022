@@ -4,11 +4,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   width: 65%;
-  margin: 50px auto 40px;
+  margin: 12% auto 24% auto;
+
+  @media screen and (min-width: 500px) {
+    width: 40%;
+    margin: 50px auto 40px;
+  }
 
   & > img {
     cursor: pointer;
+    margin-bottom: 30px;
   }
 
   &__count-info {
