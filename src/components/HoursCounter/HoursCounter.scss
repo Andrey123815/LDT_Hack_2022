@@ -1,0 +1,40 @@
+@use 'src/configurations/theme' as theme;
+
+.hours-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 65%;
+  margin: 50px auto 40px;
+
+  & > img {
+    cursor: pointer;
+  }
+
+  &__count-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+//.tune-block__counter {
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: space-between;
+//}
+
+.count-info {
+  &__hours-number {
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 112px;
+    color: theme.$primary;
+  }
+  &__description {
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 33px;
+    color: theme.$passiveTextColor;
+  }
+}

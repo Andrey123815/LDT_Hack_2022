@@ -3,7 +3,7 @@ import './PageTitle.scss';
 
 function PageTitle(props) {
   return (
-    <div className="page-title">
+    <div className="page-title" style={{marginTop: props.withoutMargin ? '0' : '20px'}}>
       {props.children}
     </div>
   );

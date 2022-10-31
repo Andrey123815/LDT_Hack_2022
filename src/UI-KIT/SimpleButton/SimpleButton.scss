@@ -28,6 +28,9 @@
     &:hover {
       background: theme.$hoverPrimary;
     }
+    &:active {
+      background: theme.$primary;
+    }
   }
 
   &_low-priority {
@@ -36,6 +39,9 @@
     color: theme.$passiveTextColor;
     &:hover {
       background: theme.$hoverPassiveElementBG;
+    }
+    &:active {
+      background: theme.$passiveElementBG;
     }
   }
 }

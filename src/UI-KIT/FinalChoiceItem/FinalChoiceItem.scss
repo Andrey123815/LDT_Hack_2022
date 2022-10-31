@@ -1,7 +1,10 @@
+@use 'src/configurations/theme' as theme;
+
 .final-choice-item {
   display: flex;
   flex-direction: row;
   text-align: center;
   padding: 8px 25px;
   border-radius: 13px;
+  background: #FFFFFF;
 }

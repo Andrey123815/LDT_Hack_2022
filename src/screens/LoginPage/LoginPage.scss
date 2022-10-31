@@ -1,10 +1,20 @@
-.login-page {
-  position: absolute;
-  top: 10%;
+@use 'src/configurations/theme' as theme;
 
-  &__content {
-    height: fit-content;
-    margin-top: auto;
-    margin-bottom: auto;
+.login-page {
+  & > * {
+    align-items: center;
   }
+}
+
+label.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 18px;
+  color: theme.$pageTitleColor;
+  font-weight: bold;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
 }

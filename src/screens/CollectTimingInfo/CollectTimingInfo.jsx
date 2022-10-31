@@ -5,6 +5,7 @@ import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/Questi
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import StandardButtonsBlock from "../../components/StandardButtonsBlock/StandardButtonsBlock.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
+import HoursCounter from "../../components/HoursCounter/HoursCounter.jsx";
 
 function CollectTimingInfo(props) {
   return (
@@ -12,14 +13,7 @@ function CollectTimingInfo(props) {
       <div className="timing-choice">
         <QuestionnaireHeaderIcon size='small' />
         <PageTitle>Сколько у вас есть свободного времени для маршрута?</PageTitle>
-        <div className="timing-choice__tune-block">
-          <img src="/icons/minus-button.svg" alt="minus" />
-          <div className="tune-block__counter">
-            <span className="counter__hours-number">9</span>
-            <span className="counter__description">часов</span>
-          </div>
-          <img src="/icons/minus-button.svg" alt="minus" />
-        </div>
+        <HoursCounter />
         <StandardButtonsBlock navigateTo={NAV_ROUTES.questionnaireConfirmation} />
       </div>
     </QuestionnaireTemplate>
