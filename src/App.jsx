@@ -5,8 +5,19 @@ import {
   Routes,
 } from 'react-router-dom';
 import {NAVIGATION} from "./configurations/navigation.jsx";
+import {useEffect} from "react";
+import {fetchInterests} from "./api/interestsAPI.js";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchPlaces} from "./api/placesAPI.js";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchInterests());
+    dispatch(fetchPlaces());
+  }, []);
+
+  const places = useSelector(state => state.places.places);
 
   return (
     <div className="app">

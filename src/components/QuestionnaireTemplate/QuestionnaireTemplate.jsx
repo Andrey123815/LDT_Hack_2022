@@ -7,7 +7,7 @@ export const TEMPLATE_TYPE = {
   verify: 'verify',
   routeTypeChoice: 'route-type-choice',
   personalRouteInvitation: 'personal-route-invitation',
-  collectInterestsInfo: 'collect-interests-info',
+  collectInterestsInfo: 'collect-slices-info',
   collectTimingInfo: 'collect-timing-info',
   collectTransportInfo: 'collect-transport-info',
   collectTripTeamInfo: 'collect-trip-team-info',
