@@ -1,0 +1,30 @@
+@use 'src/configurations/theme' as theme;
+
+.questionnaire {
+  display: flex;
+  flex-direction: row;
+
+  max-height: 100%;
+
+  &__image {
+    width: 65%;
+    max-height: 50%;
+    object-fit: cover;
+  }
+  &__side-background {
+    width: 35%;
+    background: theme.$primary;
+  }
+  &__main-content {
+    width: 730px;
+    height: 800px;
+    background: #F7F7F7;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40%;
+    margin: auto 0;
+  }
+}

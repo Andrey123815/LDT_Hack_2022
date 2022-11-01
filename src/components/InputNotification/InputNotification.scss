@@ -1,0 +1,21 @@
+.input-notification {
+  display: flex;
+  flex-direction: row;
+  width: 420px;
+  height: 68px;
+  padding: 10px 20px 10px 12px;
+  background: #262626;
+  border-radius: 4px;
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+  top: -30px;
+
+  &__text {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 8px;
+  }
+}

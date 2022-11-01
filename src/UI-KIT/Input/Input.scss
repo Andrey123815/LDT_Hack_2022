@@ -1,0 +1,22 @@
+@use 'src/configurations/theme' as theme;
+
+.simple-input {
+  padding: 18px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  margin-left: auto;
+  margin-right: auto;
+  background: theme.$inputBackground;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.simple-input::placeholder {
+  color: theme.$inputTextColor;
+  letter-spacing: initial;
+}
+
+.simple-input:focus {
+  outline: none;
+}

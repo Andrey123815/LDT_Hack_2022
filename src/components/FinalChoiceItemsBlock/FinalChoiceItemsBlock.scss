@@ -1,0 +1,44 @@
+@use 'src/configurations/theme' as theme;
+
+@mixin base-container {
+  display: flex;
+  flex-direction: row;
+  color: #232F34;
+  margin-bottom: 18px;
+}
+
+.choice-item-block {
+
+  margin-top: 20px;
+
+  & > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__header {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: theme.$primary;
+    margin-bottom: 15px;
+  }
+
+  &__items {
+    &_interests {
+      width: 280px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      @include base-container;
+    }
+
+    &_company,
+    &_transport,
+    &_free-time {
+      justify-content: center;
+      gap: 15px;
+      @include base-container;
+    }
+  }
+}

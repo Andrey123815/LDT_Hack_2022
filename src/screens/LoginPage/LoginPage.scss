@@ -1,0 +1,20 @@
+@use 'src/configurations/theme' as theme;
+
+.login-page {
+  & > * {
+    align-items: center;
+  }
+}
+
+label.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 18px;
+  color: theme.$pageTitleColor;
+  font-weight: bold;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
+}

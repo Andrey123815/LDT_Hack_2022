@@ -1,0 +1,47 @@
+@use 'src/configurations/theme' as theme;
+
+@mixin simple-button-base {
+  all: unset;
+  border-radius: 4px;
+  line-height: 18px;
+  font-size: 18px;
+
+  width: 85%;
+  max-width: 344px;
+  max-height: 55px;
+
+  text-align: center;
+  padding: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 500px) {
+    margin-bottom: 30px;
+  }
+}
+
+.simple-button {
+  &_high-priority {
+    @include simple-button-base;
+    background: theme.$primary;
+    color: theme.$primaryTextColor;
+    &:hover {
+      background: theme.$hoverPrimary;
+    }
+    &:active {
+      background: theme.$primary;
+    }
+  }
+
+  &_low-priority {
+    @include simple-button-base;
+    background: theme.$passiveElementBG;
+    color: theme.$passiveTextColor;
+    &:hover {
+      background: theme.$hoverPassiveElementBG;
+    }
+    &:active {
+      background: theme.$passiveElementBG;
+    }
+  }
+}
