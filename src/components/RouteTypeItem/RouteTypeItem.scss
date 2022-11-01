@@ -1,0 +1,49 @@
+.format-type-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 85%;
+  max-width: 400px;
+  height: 100px;
+
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 20px;
+  padding-right: 40px;
+
+  background: #FCFCFC;
+  box-shadow: 15px 4px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  & * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 20px;
+    @media screen and (min-width: 500px)  {
+      gap: 30px;
+      font-size: 17px;
+    }
+  }
+
+  &__description {
+    font-weight: 600;
+    line-height: 18px;
+    align-content: start;
+    text-align: left;
+  }
+  &__arrow {
+    height: 20%;
+  }
+}

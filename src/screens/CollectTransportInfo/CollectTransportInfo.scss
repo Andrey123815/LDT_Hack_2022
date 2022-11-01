@@ -1,0 +1,13 @@
+.transport-type__choice-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @media screen and (min-width: 500px) {
+    width: 270px;
+  }
+  width: 65%;
+  margin: 20px auto 30px;
+}

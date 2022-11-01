@@ -1,0 +1,14 @@
+@use 'src/configurations/theme' as theme;
+
+.final-choice-item {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 8px 25px;
+  border-radius: 13px;
+
+  @media screen and (min-width: 500px) {
+    background: #FFFFFF;
+  }
+  background: theme.$passiveElementBG;
+}

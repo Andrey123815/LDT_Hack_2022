@@ -1,18 +1,33 @@
 $_lightTheme: (
-        "primary": #F75050,
+        "primary": #E22C38,
+        "hoverPrimary": #bd0c18,
         "primaryTextColor": #FFFFFF,
         "inputBackground": #F3F4F6,
         "inputTextColor": #BDBEBF,
-        "supportOffer": #BDBEBF,
+        "pageTitleColor": #464646,
+        "questionnaireSubtitle": #7E7E80,
+        "routeExplanationText": #7E7E80,
+        "passiveElementBG": #F3F4F6,
+        "hoverPassiveElementBG": #dfe1e3,
+        "passiveTextColor": #BDBEBF,
+        "lowPriorityButton": #F3F4F6,
+
 );
 
 @function setThemeColors($theme) {
   $appColors: (
           "primary": map-get($theme, "primary"),
+          "hoverPrimary": map-get($theme, "hoverPrimary"),
           "primaryTextColor": map-get($theme, "primaryTextColor"),
           "inputBackground": map-get($theme, "inputBackground"),
           "inputTextColor": map-get($theme, "inputTextColor"),
-          "supportOffer": map-get($theme, "supportOffer"),
+          "pageTitleColor": map-get($theme, "pageTitleColor"),
+          "questionnaireSubtitle": map-get($theme, "questionnaireSubtitle"),
+          "routeExplanationText": map-get($theme, "routeExplanationText"),
+          "passiveElementBG": map-get($theme, "passiveElementBG"),
+          "hoverPassiveElementBG": map-get($theme, "hoverPassiveElementBG"),
+          "passiveTextColor": map-get($theme, "passiveTextColor"),
+
   );
 
   @return $appColors;
@@ -21,7 +36,13 @@ $_lightTheme: (
 $THEME: setThemeColors($_lightTheme);
 
 $primary: map-get($THEME, "primary");
+$hoverPrimary: map-get($THEME, "hoverPrimary");
 $primaryTextColor: map-get($THEME, "primaryTextColor");
 $inputBackground: map-get($THEME, "inputBackground");
 $inputTextColor: map-get($THEME, "inputTextColor");
-$supportOffer: map-get($THEME, "supportOffer");
+$pageTitleColor: map-get($THEME, "pageTitleColor");
+$questionnaireSubtitle: map-get($THEME, "questionnaireSubtitle");
+$routeExplanationText: map-get($THEME, "routeExplanationText");
+$passiveElementBG: map-get($THEME, "passiveElementBG");
+$hoverPassiveElementBG: map-get($THEME, "hoverPassiveElementBG");
+$passiveTextColor: map-get($THEME, "passiveTextColor");
