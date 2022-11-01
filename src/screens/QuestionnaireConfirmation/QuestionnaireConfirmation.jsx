@@ -26,9 +26,11 @@ function QuestionnaireConfirmation(props) {
       <div className="personal-route-invitation">
         <QuestionnaireHeaderIcon size='small' smallMargin={true} />
         <PageTitle withoutMargin={true}>Давайте сверимся, всё верно?</PageTitle>
-        {resultArray.map((data, index) =>
-          <FinalChoiceItemsBlock key={blocks[index]} block={blocks[index]} type={types[index]} data={data}/>
-        )}
+        <div className="personal-route-invitation__item-blocks">
+          {resultArray.map((data, index) =>
+            <FinalChoiceItemsBlock key={blocks[index]} block={blocks[index]} type={types[index]} data={data}/>
+          )}
+        </div>
       </div>
       <SimpleButton onClick={() => navigate(NAV_ROUTES.main)}>Далее</SimpleButton>
     </QuestionnaireTemplate>

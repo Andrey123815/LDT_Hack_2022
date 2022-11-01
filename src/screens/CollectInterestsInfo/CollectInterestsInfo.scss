@@ -6,12 +6,15 @@
   gap: 15px;
 
   //max-height: 15%;
-  //overflow: auto;
+  width: 80%;
+  overflow: auto;
 
   @media screen and (min-width: 500px) {
     width: 50%;
+    max-height: 160px;
   }
-  width: 80%;
+
+  max-height: calc(100vh - 485px);
 
   margin: 20px auto 30px;
 }

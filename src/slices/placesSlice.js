@@ -11,7 +11,7 @@ export const placesSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchPlaces.fulfilled]: (state, action) => {
-      state.places = action.payload.map(place => {place.coordinates?.reverse(); console.log('after reverse', place.coordinates); return place});
+      state.places = action.payload.map(place => {place.coordinates?.reverse(); return place});
     },
   }
 })

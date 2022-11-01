@@ -6,10 +6,10 @@ function QuestionnaireChoiceItem(props) {
 
   return (
     <div className={`choice-item_${status}`} onClick={props.onClick}>
-      {props.active &&
-        <img src="/icons/selected-item.svg" alt=""/>
-      }
-      <span>{props.children}</span>
+      {/*{props.active &&*/}
+        <img style={{visibility: status === 'passive' ? 'hidden' : 'visible'}} src="/icons/selected-item.svg" alt=""/>
+      {/*}*/}
+      <span className={`choice-item__text_${status}`}>{props.children}</span>
     </div>
   );
 }

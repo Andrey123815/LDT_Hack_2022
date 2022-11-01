@@ -60,7 +60,7 @@ function LoginPage() {
     <QuestionnaireTemplate page={TEMPLATE_TYPE.verify}>
       <div className="login-page">
         <QuestionnaireHeaderIcon size='large' />
-        <PageTitle>Введите данные, чтобы войти в личный кабинет</PageTitle>
+        <PageTitle>Укажите номер телефона чтобы получить бонусы в программе "Друзья ВДНХ"</PageTitle>
         <div className="input-block">
           <TextField
             id="standard-helperText"

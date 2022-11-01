@@ -16,7 +16,7 @@ function CollectTimingInfo(props) {
         <QuestionnaireHeaderIcon size='small' />
         <PageTitle>Сколько у вас есть свободного времени для маршрута?</PageTitle>
         <HoursCounter
-          minus={() => setHoursAmount(hoursAmount - 1)}
+          minus={() => setHoursAmount(hoursAmount >= 2 ? hoursAmount - 1 : 1)}
           plus={() => setHoursAmount(hoursAmount + 1)}
           hours={hoursAmount}
         />
