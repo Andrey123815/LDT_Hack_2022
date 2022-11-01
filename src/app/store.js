@@ -5,6 +5,6 @@ import placesReducer from '../slices/placesSlice.js';
 export const store = configureStore({
   reducer: {
     places: placesReducer,
-    interests: interestsReducer,
+    // interests: interestsReducer,
   },
 })

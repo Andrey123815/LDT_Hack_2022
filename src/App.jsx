@@ -13,11 +13,9 @@ import {fetchPlaces} from "./api/placesAPI.js";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchInterests());
+    // dispatch(fetchInterests());
     dispatch(fetchPlaces());
   }, []);
-
-  const places = useSelector(state => state.places.places);
 
   return (
     <div className="app">

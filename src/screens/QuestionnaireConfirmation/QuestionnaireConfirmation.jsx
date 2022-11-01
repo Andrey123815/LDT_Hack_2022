@@ -30,7 +30,7 @@ function QuestionnaireConfirmation(props) {
           <FinalChoiceItemsBlock key={blocks[index]} block={blocks[index]} type={types[index]} data={data}/>
         )}
       </div>
-      <SimpleButton onClick={() => navigate(NAV_ROUTES.verify)}>Далее</SimpleButton>
+      <SimpleButton onClick={() => navigate(NAV_ROUTES.main)}>Далее</SimpleButton>
     </QuestionnaireTemplate>
   );
 }

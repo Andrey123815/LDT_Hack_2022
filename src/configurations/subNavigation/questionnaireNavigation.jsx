@@ -8,7 +8,7 @@ import QuestionnaireConfirmation from "../../screens/QuestionnaireConfirmation/Q
 export const QUEST_NAV_ROUTES = {
   personalRouteInvitation: '/personal-route-invitation',
   collectTripTeamInfo: '/collect-trip-team-info',
-  collectInterestsInfo: '/collect-slices-info',
+  collectInterestsInfo: '/collect-interests-info',
   collectTransportInfo: '/collect-transport-info',
   collectTimingInfo: '/collect-timing-info',
   questionnaireConfirmation: '/questionnaire-answers-confirmation'

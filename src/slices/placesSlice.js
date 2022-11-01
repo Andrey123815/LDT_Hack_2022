@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import {fetchPlaces} from "../api/placesAPI.js";
 
 const initialState = {
-  interests: 0,
+  places: [],
 }
 
 export const placesSlice = createSlice({
@@ -11,11 +11,11 @@ export const placesSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchPlaces.fulfilled]: (state, action) => {
-      state.interests = action.payload;
+      state.places = action.payload.map(place => {place.coordinates?.reverse(); console.log('after reverse', place.coordinates); return place});
     },
   }
 })
 
-export const { increment, decrement, incrementByAmount } = placesSlice.actions
+// export const { increment, decrement, incrementByAmount } = placesSlice.actions
 
 export default placesSlice.reducer
