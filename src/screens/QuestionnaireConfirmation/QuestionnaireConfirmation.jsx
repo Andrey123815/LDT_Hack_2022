@@ -17,7 +17,7 @@ const timing = 9;
 
 const resultArray = [getFromBackendInterests, tripTeam, chosenTransport, timing];
 const blocks = ['Интересы', 'Компания', 'Передвижение', 'Свободное время'];
-const types = ['slices', 'company', 'transport', 'free-time'];
+const types = ['interests', 'company', 'transport', 'free-time'];
 
 function QuestionnaireConfirmation(props) {
   const navigate = useNavigate();
