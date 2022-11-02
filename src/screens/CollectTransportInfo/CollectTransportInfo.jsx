@@ -17,7 +17,7 @@ function CollectTransportInfo(props) {
     <QuestionnaireTemplate page={TEMPLATE_TYPE.collectTransportInfo}>
       <div className="transport-type">
         <QuestionnaireHeaderIcon size='small' />
-        <PageTitle>Как будете передвигаться?</PageTitle>
+        <PageTitle withoutMargin={true}>Как будете передвигаться?</PageTitle>
         <div className="transport-type__choice-block">
           {TRANSPORT_TYPES.map((variant, index) =>
             <QuestionnaireChoiceItem

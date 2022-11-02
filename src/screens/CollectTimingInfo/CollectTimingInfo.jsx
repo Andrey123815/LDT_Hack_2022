@@ -6,6 +6,7 @@ import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import StandardButtonsBlock from "../../components/StandardButtonsBlock/StandardButtonsBlock.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import HoursCounter from "../../components/HoursCounter/HoursCounter.jsx";
+import {isMobile} from "../../libraries/screenTypeCheck";
 
 function CollectTimingInfo(props) {
   const [hoursAmount, setHoursAmount] = useState(5);
@@ -14,7 +15,7 @@ function CollectTimingInfo(props) {
     <QuestionnaireTemplate page={TEMPLATE_TYPE.collectTimingInfo}>
       <div className="timing-choice">
         <QuestionnaireHeaderIcon size='small' />
-        <PageTitle>Сколько у вас есть свободного времени для маршрута?</PageTitle>
+        <PageTitle width={isMobile() && '80%' || '60%'} withoutMargin={true}>Сколько у вас есть свободного времени для маршрута?</PageTitle>
         <HoursCounter
           minus={() => setHoursAmount(hoursAmount >= 2 ? hoursAmount - 1 : 1)}
           plus={() => setHoursAmount(hoursAmount + 1)}
