@@ -32,7 +32,7 @@ function QuestionnaireConfirmation(props) {
           )}
         </div>
       </div>
-      <SimpleButton onClick={() => navigate(NAV_ROUTES.main)}>Далее</SimpleButton>
+      <SimpleButton onClick={() => navigate(NAV_ROUTES.detailedPointInfo)}>Далее</SimpleButton>
     </QuestionnaireTemplate>
   );
 }
