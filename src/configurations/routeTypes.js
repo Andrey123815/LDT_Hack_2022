@@ -7,11 +7,16 @@ export const ROUTE_TYPES = [
     description: 'Тематические маршруты',
     navigateTo: '',
     redirectToOuterSource:
-      () => window.open("example.com", "_blank"),
+      () => window.open("https://vdnh.ru/routes/", "_blank"),
   },
   {
     img: '/images/routeTypes/personal-routes.svg',
     description: 'Персональные маршруты',
     navigateTo: QUEST_NAV_ROUTES.personalRouteInvitation,
+  },
+  {
+    img: '/images/routeTypes/personal-routes.svg',
+    description: 'Смотреть карту ВДНХ',
+    navigateTo: '/free-modes-routes',
   },
 ];

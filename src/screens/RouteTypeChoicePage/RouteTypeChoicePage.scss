@@ -1,9 +1,10 @@
 .route-type__items {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 0.5vh;
   @media screen and (min-width: 500px)  {
-    gap: 30px;
+    gap: 15px;
   }
-  margin-top: 50px;
+  margin-top: 30px;
 }
