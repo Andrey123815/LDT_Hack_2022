@@ -3,3 +3,96 @@
   height: 500px;
   border: 1px solid;
 }
+
+.balloon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+
+  box-sizing: border-box;
+  width: 360px;
+  height: 130px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px 4px 0 0;
+  background: #FFFFFF;
+
+  &__object-img {
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__object-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 180px;
+    height: 115px;
+    text-align: left;
+  }
+}
+
+.object-info {
+  &__header {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 13px;
+    letter-spacing: 0.1px;
+    color: #E22C38;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 15px;
+    letter-spacing: 0.1px;
+    color: #000000;
+  }
+  &__more-info-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 25px;
+
+    box-sizing: border-box;
+    text-align: center;
+    background: #336AF7;
+    border-radius: 4px;
+    padding: 14px 78px;
+    color: #FFFFFF;
+    cursor: pointer;
+
+    & > span {
+      position: absolute;
+      top: 74%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  &__mark {
+    position: relative;
+    top: -10px;
+    left: 6px;
+  }
+}
+
+.ymaps-2-1-79-balloon__close {
+  opacity: 0;
+}
+
+.ymaps-2-1-79-balloon__close+.ymaps-2-1-79-balloon__content {
+  margin-right: 0 !important;
+  border-bottom: 5px solid #E22C38;
+}
+
+.ymaps-2-1-79-map ymaps, .ymaps-2-1-79-map ymaps:after, .ymaps-2-1-79-map ymaps:before {
+  border-radius: 10px 10px 0 0;
+}
+
+.ymaps-2-1-79-balloon_to_top .ymaps-2-1-79-balloon__tail {
+  opacity: 0;
+}

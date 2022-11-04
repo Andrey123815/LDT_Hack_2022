@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import './DetailedPointInformation.scss';
-import PointCardHeader from "../../components/PointCardHeader/PointCardHeader.jsx";
+import MainHeader from "../../components/MainHeader/MainHeader.jsx";
 import TitleSwitcher from "../../components/TitleSwitcher/TitleSwitcher.jsx";
 import BackToMapButton from "../../UI-KIT/BackToMapButton/BackToMapButton.jsx";
 import BonusSystemBanner from "../../components/BonusSystemBanner/BonusSystemBanner.jsx";
 import AccentButton from "../../UI-KIT/AccentButton/AccentButton.jsx";
+import BackQuestionnaireArrow from "../../UI-KIT/BackQuestionnaireArrow/BackQuestionnaireArrow.jsx";
 
 const TITLE_SWITCHER_ITEMS = [
   'Описание объекта',
@@ -18,10 +19,10 @@ function DetailedPointInformation(props) {
   const [titlesStatus, setTitlesStatus] = useState(startState);
   return (
     <div className="detailed-point-information">
-      <PointCardHeader />
+      <MainHeader />
       <div className="detailed-point-information__main-content">
         <div className="main-content__info">
-          <BackToMapButton>Обратно к карте</BackToMapButton>
+          <BackToMapButton>Вернуться на карту</BackToMapButton>
           <header className="info__object-name">{props.pointName || 'Павильон №34. Центр «Космонавтика и авиация»'}</header>
           <div className="info__control-line">
             <TitleSwitcher
@@ -41,7 +42,12 @@ function DetailedPointInformation(props) {
           <BonusSystemBanner />
         </div>
         <div className="main-content__pictures">
-          <img src="/images/test-img.jpg" width="100%" />
+          <img src="/images/test-img.jpg" width="100%"  alt=""/>
+          <div className="pictures__switch-block">
+            <BackQuestionnaireArrow />
+            <BackQuestionnaireArrow direction="right" />
+            {/*<BackQuestionnaireArrow direction="right" />*/}
+          </div>
         </div>
       </div>
     </div>

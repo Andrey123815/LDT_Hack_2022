@@ -26,6 +26,23 @@
   }
 }
 
+.pictures__switch-block {
+  position: absolute;
+  right: 58px;
+  bottom: 58px;
+  width: 130px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & .back-questionnaire-arrow {
+    left: unset;
+    top: unset;
+    position: relative;
+  }
+}
+
 .info {
   &__object-name {
     font-weight: 500;

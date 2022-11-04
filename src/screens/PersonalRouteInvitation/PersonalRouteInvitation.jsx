@@ -1,6 +1,6 @@
 import React from 'react';
 import './PersonalRouteInvitation.scss';
-import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../components/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
+import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../screenTemplates/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import SimpleButton from "../../UI-KIT/SimpleButton/SimpleButton.jsx";

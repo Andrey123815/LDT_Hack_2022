@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../components/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
+import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../screenTemplates/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";

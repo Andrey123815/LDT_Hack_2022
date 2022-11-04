@@ -1,0 +1,20 @@
+@use '../../configurations/theme' as theme;
+
+.new-location-offer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 4px;
+  background: theme.$sideMapBlocksBG;
+
+  &__text {
+    width: 255px;
+    height: 55px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.1px;
+    color: #000000;
+  }
+}

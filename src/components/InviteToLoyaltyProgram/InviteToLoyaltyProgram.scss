@@ -1,0 +1,34 @@
+.invite-to-loyalty-program {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 20px 30px 20px;
+  height: 45%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__side-panel {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+  }
+}
+
+.content {
+  &__header {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.1px;
+    color: #000000;
+  }
+  &__invitation {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+  }
+}

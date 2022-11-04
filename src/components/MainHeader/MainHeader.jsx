@@ -1,5 +1,5 @@
 import React from 'react';
-import './PointCardHeader.scss';
+import './MainHeader.scss';
 
 const HEADER_ITEMS = {
   left: [
@@ -17,7 +17,7 @@ const HEADER_ITEMS = {
   ],
 };
 
-function PointCardHeader() {
+function MainHeader() {
   return (
     <div className="point-card-header">
       <div className="point-card-header__left-part">
@@ -34,4 +34,4 @@ function PointCardHeader() {
   );
 }
 
-export default PointCardHeader;
+export default MainHeader;

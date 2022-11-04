@@ -11,7 +11,7 @@ function BackQuestionnaireArrow(props) {
 
   return (
     <div className="back-questionnaire-arrow" onClick={() => navigate(-1)}>
-      <img src="/icons/back-questionnaire-arrow.svg" alt="Назад" />
+      <img style={{transform: props.direction === 'right' ? 'rotate(180deg)' : 'rotate(0deg)'}} src="/icons/back-questionnaire-arrow.svg" alt="Назад" />
     </div>
   );
 }
