@@ -1,12 +1,25 @@
+@use 'src/configurations/theme' as theme;
+
 .personal-route-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px 25px;
+  filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.1));
+  border-radius: 4px 4px 0 0;
+  background: theme.$primaryTextColor;
+  cursor: pointer;;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   &__route-info {
     display: flex;
     flex-direction: column;
-    height: 13%;
+    justify-content: space-between;
     width: 60%;
   }
 }
@@ -19,13 +32,20 @@
     letter-spacing: 0.1px;
     color: #000000;
   }
-  &__duration,
-  &__distance {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    letter-spacing: 0.1px;
-    color: #336AF7;
+
+  &__params {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
   }
+}
+
+.params__duration,
+.params__distance {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.1px;
+  color: #336AF7;
 }

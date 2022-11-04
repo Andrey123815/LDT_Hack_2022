@@ -7,7 +7,7 @@
 }
 
 .point-card-header {
-  width: 92%;
+  width: 95%;
   height: 80px;
   color: theme.$primary;
   @include base-header;
@@ -18,11 +18,12 @@
   border-radius: 4px;
 
   position: absolute;
-  top: 40px;
+  top: 2.5%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  z-index: 1;
 
   &__item {
     margin-top: auto;

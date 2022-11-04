@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './CollectTimingInfo.scss';
 import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../screenTemplates/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
@@ -7,9 +7,16 @@ import StandardButtonsBlock from "../../components/StandardButtonsBlock/Standard
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import HoursCounter from "../../components/HoursCounter/HoursCounter.jsx";
 import {isMobile} from "../../libraries/screenTypeCheck";
+import {useDispatch} from "react-redux";
+import {updateFreeTime} from "../../slices/questionnaire.js";
 
-function CollectTimingInfo(props) {
+function CollectTimingInfo() {
   const [hoursAmount, setHoursAmount] = useState(5);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(updateFreeTime(hoursAmount));
+  }, [hoursAmount]);
 
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.collectTimingInfo}>

@@ -15,7 +15,7 @@ function InviteToLoyaltyProgram(props) {
         <AccentButton theme="blue">Войти в программу</AccentButton>
       </div>
       <div className="invite-to-loyalty-program__side-panel">
-        <img src="/icons/share-object.svg" alt="share" />
+        <img src="/icons/share-object_red.svg" alt="share" />
       </div>
     </div>
   );

@@ -3,12 +3,16 @@ import RouteTypeChoicePage from "../screens/RouteTypeChoicePage/RouteTypeChoiceP
 import {QUEST_NAV_ROUTES, QUESTIONNAIRE_NAVIGATION} from "./subNavigation/questionnaireNavigation.jsx";
 import MainPage from "../screens/MainPage/MainPage.jsx";
 import DetailedPointInformation from "../screens/DetailedPointInformation/DetailedPointInformation.jsx";
+import PersonalMapRoutes from "../screens/PersonalMapRoutes/PersonalMapRoutes.jsx";
+import FreeModeRoutes from "../screens/FreeModeRoutes/FreeModeRoutes.jsx";
 
 export const NAV_ROUTES = {
   root: '/',
   verify: '/verify',
   main: '/main',
   detailedPointInfo: '/detailed-point-info',
+  personalRoutes: '/personal-routes',
+  freeModeRoutes: '/free-modes-routes',
   ...QUEST_NAV_ROUTES
 }
 
@@ -29,6 +33,14 @@ export const NAVIGATION = {
     {
       path: NAV_ROUTES.detailedPointInfo,
       element: <DetailedPointInformation/>
+    },
+    {
+      path: NAV_ROUTES.personalRoutes,
+      element: <PersonalMapRoutes/>
+    },
+    {
+      path: NAV_ROUTES.freeModeRoutes,
+      element: <FreeModeRoutes/>
     },
   ],
   questionnaire: QUESTIONNAIRE_NAVIGATION,

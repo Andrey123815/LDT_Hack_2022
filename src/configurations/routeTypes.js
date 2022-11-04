@@ -5,7 +5,9 @@ export const ROUTE_TYPES = [
   {
     img: '/images/routeTypes/theme-routes.svg',
     description: 'Тематические маршруты',
-    navigateTo: '/main',
+    navigateTo: '',
+    redirectToOuterSource:
+      () => window.open("example.com", "_blank"),
   },
   {
     img: '/images/routeTypes/personal-routes.svg',

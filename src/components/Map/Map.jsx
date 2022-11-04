@@ -51,13 +51,12 @@ const AppMap = React.memo(() => {
 
   return (
     <div className="layer">
-      <div style={{height: "100px"}}></div>
       <YMaps>
         <Map
           state={mapState}
           onClick={closeCurrentBalloon}
           width="100%"
-          height="100%"
+          height="100vh"
         >
           <Clusterer
             options={{

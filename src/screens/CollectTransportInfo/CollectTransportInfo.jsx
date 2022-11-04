@@ -6,12 +6,15 @@ import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import QuestionnaireChoiceItem from "../../UI-KIT/QuestionnaireChoiceItem/QuestionnaireChoiceItem.jsx";
 import StandardButtonsBlock from "../../components/StandardButtonsBlock/StandardButtonsBlock.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
-import {generateDefaultArr} from "../../libraries/generator.js";
 import {TRANSPORT_TYPES} from "../../configurations/defaultListsItems/transportTypes.js";
+import {useDispatch} from "react-redux";
+import {updateTransport} from "../../slices/questionnaire.js";
 
 function CollectTransportInfo(props) {
-  const [selectedInterests, setSelectedInterests] =
-    useState(generateDefaultArr(TRANSPORT_TYPES.length));
+  const [selectedTransport, setSelectedTransport] =
+    useState(TRANSPORT_TYPES[3]);
+
+  const dispatch = useDispatch();
 
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.collectTransportInfo}>
@@ -22,10 +25,13 @@ function CollectTransportInfo(props) {
           {TRANSPORT_TYPES.map((variant, index) =>
             <QuestionnaireChoiceItem
               key={variant}
-              active={selectedInterests[index]}
+              active={selectedTransport === TRANSPORT_TYPES[index]}
               onClick={() => {
-                setSelectedInterests(selectedInterests
-                  .map((item, ind) => ind === index ? !item : false));
+                setSelectedTransport(selectedTransport === TRANSPORT_TYPES[index]
+                  ? ''
+                  : TRANSPORT_TYPES[index]
+                )
+                dispatch(updateTransport(selectedTransport));
               }}
             >
               {variant}

@@ -1,0 +1,15 @@
+.personal-route-info__routes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &:nth-child(1) {
+
+  }
+}
+
+.pages-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
