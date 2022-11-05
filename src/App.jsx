@@ -9,6 +9,7 @@ import {useEffect} from "react";
 import {fetchInterests} from "./api/interestsAPI.js";
 import {useDispatch} from "react-redux";
 import {fetchPlaces} from "./api/placesAPI.js";
+import {useGeolocation} from "./libraries/geolocation.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,9 @@ function App() {
     dispatch(fetchInterests());
     dispatch(fetchPlaces());
   }, []);
+
+  const [lng, ltd, status] = useGeolocation();
+  console.log(lng, ltd, status);
 
   return (
     <div className="app">

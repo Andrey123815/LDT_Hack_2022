@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useRef, useState} from "react";
 import {YMaps, Map, Placemark, Clusterer} from "react-yandex-maps";
 import "./Map.scss";
-import {useSelector} from "react-redux";
 
 const mapState = {
   center: [55.831818, 37.628951],
@@ -46,8 +45,60 @@ const createPlacemark = (type) => {
   };
 };
 
-const AppMap = React.memo(() => {
-  const places = useSelector(state => state.places.places);
+const AppMap = React.memo((props) => {
+  const {places, routes} = props;
+
+  const [ymaps, setYmaps] = useState(null);
+  // Завел для хранения маршрута переменную(аналогия переменной класса в стэйтлесс компоненте)
+  const mapRoutes = useRef(null);
+
+  const getRoute = (ref, routes) => {
+    if (ymaps && routes) {
+      // const personalRoutesOnMap = [];
+
+      // console.log('routes', routes);
+
+      // for (let route of routes) {
+      //   console.log('route in cycle', route);
+      const routePointsCoordinates = routes[0].places.map(({coordinates}) => coordinates);
+      console.log('routePointsCoordinates', routePointsCoordinates)
+
+        // const routePointsCoordinates = route.places.map(({coordinates}) => coordinates);
+        // console.log('routePointsCoordinates', routePointsCoordinates)
+
+        const multiRoute = new ymaps.multiRouter.MultiRoute(
+          {
+            // Описание опорных точек мультимаршрута.
+            referencePoints: routePointsCoordinates,
+            // Параметры маршрутизации.
+            params: {
+              // Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
+              results: 2
+            }
+          },
+          {
+            // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
+            boundsAutoApply: true,
+            // Внешний вид линии маршрута.
+            routeActiveStrokeWidth: 6,
+            routeActiveStrokeColor: "#fa6600"
+          }
+        );
+      console.log('multiRoute', multiRoute)
+        mapRoutes.current = multiRoute;
+        ref.geoObjects.add(multiRoute);
+        // console.log('before return', multiRoute)
+        // return;
+        // personalRoutesOnMap.push(multiRoute);
+      // }
+
+      // Кладем полученный маршрут в переменную
+      // mapRoutes.current = personalRoutesOnMap;
+      // personalRoutesOnMap.forEach((singlePersonalMultiRoute) => ref.geoObjects.add(singlePersonalMultiRoute));
+      // ref.geoObjects.add(multiRoute);
+      // console.log('way points', mapRoutes.current.getWayPoints());
+    }
+  };
 
   return (
     <div className="layer">
@@ -57,6 +108,9 @@ const AppMap = React.memo(() => {
           onClick={closeCurrentBalloon}
           width="100%"
           height="100vh"
+          modules={["multiRouter.MultiRoute"]}
+          instanceRef={ref => ref && getRoute(ref, routes)}
+          onLoad={ymaps => setYmaps(ymaps)}
         >
           <Clusterer
             options={{
@@ -69,9 +123,9 @@ const AppMap = React.memo(() => {
           >
             {places && places
               .filter(({coordinates}) => coordinates !== undefined)
-              .map(({coordinates, title, preview_text, pic, type}, idx) => (
+              .map(({coordinates, title, preview_text, pic, type}) => (
                 <Placemark
-                  key={idx}
+                  key={coordinates.toString()}
                   geometry={coordinates}
                   properties={createBalloon(title, preview_text, pic, type)}
                   options={createPlacemark(type)}

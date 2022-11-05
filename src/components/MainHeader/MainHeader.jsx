@@ -21,13 +21,13 @@ function MainHeader() {
   return (
     <div className="point-card-header">
       <div className="point-card-header__left-part">
-        {HEADER_ITEMS.left.map(item =>
-          <span className="point-card-header__item">{item}</span>
+        {HEADER_ITEMS.left.map((item, index) =>
+          <span key={item.toString()} className="point-card-header__item">{item}</span>
         )}
       </div>
       <div className="point-card-header__right-part">
         {HEADER_ITEMS.right.map(item =>
-          <span className="point-card-header__item">{item}</span>
+          <span key={item.toString()} className="point-card-header__item">{item}</span>
         )}
       </div>
     </div>

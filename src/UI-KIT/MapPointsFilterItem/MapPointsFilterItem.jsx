@@ -3,7 +3,7 @@ import './MapPointsFilterItem.scss';
 
 function MapPointsFilterItem(props) {
   return (
-    <div className={`map-filter-item_${props.active || 'passive'}`}>
+    <div className={`map-filter-item_${props.active ? 'active' : 'passive'}`}>
       {props.children}
     </div>
   );

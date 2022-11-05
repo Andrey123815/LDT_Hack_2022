@@ -1,4 +1,4 @@
-@mixin accent-button-base {
+.accent-button {
   all: unset;
   background: #336AF7;
   border-radius: 4px;
@@ -9,17 +9,4 @@
 
   width: max-content;
   height: min-content;
-}
-
-.accent-button {
-  &_blue {
-    @include accent-button-base;
-    background: #336AF7;
-    color: #FFFFFF;
-  }
-  &_white {
-    @include accent-button-base;
-    background: #FFFFFF;
-    color: #336AF7;
-  }
 }

@@ -5,18 +5,24 @@ import PersonalRouteInfoItem from "../../UI-KIT/PersonalRouteInfoItem/PersonalRo
 import InviteToLoyaltyProgram from "../../components/InviteToLoyaltyProgram/InviteToLoyaltyProgram.jsx";
 import {useSelector} from "react-redux";
 import AccentButton from "../../UI-KIT/AccentButton/AccentButton.jsx";
+import {useNavigate} from "react-router-dom";
+import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 
 const personalRouteItemTheme = ['#336AF7', '#F7C850', '#00FFF0'];
 
-function PersonalMapRoutes(props) {
-  const personalRoutes = useSelector(state => state.personalRoutes);
-  console.log(personalRoutes)
+function PersonalMapRoutes() {
+  const personalRoutes = useSelector(state => state.personalRoutes.personalRoutes);
   const array = ['', '', ''];
-  console.log(array)
-  // personalRoutes.routes?
+  const navigate = useNavigate();
+
+  let pointsInPersonalRoutes = [];
+  personalRoutes.routes
+    .map(({places}) => places.map(place => place))
+    .forEach(subArrayPoints => pointsInPersonalRoutes = pointsInPersonalRoutes.concat(subArrayPoints))
+
   return (
     <>
-      <ScreenWithMapTemplate title="Персональные маршруты">
+      <ScreenWithMapTemplate title="Персональные маршруты" places={pointsInPersonalRoutes} routes={personalRoutes.routes}>
         <div className="personal-route-info__routes">
           {array.map((personalRoute, index) =>
             <PersonalRouteInfoItem
@@ -27,10 +33,6 @@ function PersonalMapRoutes(props) {
               distance="1"
             />
           )}
-        </div>
-        <div className="pages-navigation">
-          <AccentButton theme="white">На карту локаций</AccentButton>
-          <AccentButton theme="blue">Готовые маршруты</AccentButton>
         </div>
         <InviteToLoyaltyProgram />
       </ScreenWithMapTemplate>

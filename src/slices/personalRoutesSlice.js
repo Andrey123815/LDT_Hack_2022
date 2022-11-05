@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {fetchPersonalRoutes} from "../api/personalRoutesAPI.js";
+import {fetchPlaces} from "../api/placesAPI.js";
 
 const initialState = {
   personalRoutes: [],

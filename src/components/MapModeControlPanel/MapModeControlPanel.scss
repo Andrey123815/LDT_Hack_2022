@@ -1,0 +1,11 @@
+.map-mode-control-panel {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  gap: 20px;
+
+  position: absolute;
+  top: 16%;
+  right: 8%;
+  z-index: 1;
+}

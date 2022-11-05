@@ -1,8 +1,14 @@
 import React from 'react';
 import './InviteToLoyaltyProgram.scss';
 import AccentButton from "../../UI-KIT/AccentButton/AccentButton.jsx";
+import {useDispatch} from "react-redux";
 
 function InviteToLoyaltyProgram(props) {
+  // const dispatch = useDispatch();
+  // const joinLoyaltyProgram = () => {
+  //
+  // }
+
   return (
     <div className="invite-to-loyalty-program">
       <div className="invite-to-loyalty-program__content">
