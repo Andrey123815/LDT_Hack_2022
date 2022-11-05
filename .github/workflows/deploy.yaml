@@ -55,7 +55,7 @@ jobs:
         uses: appleboy/scp-action@v0.0.10
         with:
           host: 87.242.127.254
-          username: ubuntu
+          username: root
           port: 22
           password: ${{ secrets.PASSWORD }}
           source: "dist"
