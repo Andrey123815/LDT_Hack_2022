@@ -1,0 +1,15 @@
+.standard-buttons-block {
+  width: 344px;
+  height: 140px;
+  position: absolute;
+
+  @media screen and (max-width: 500px) {
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  bottom: 50px;
+  left: 27%;
+}

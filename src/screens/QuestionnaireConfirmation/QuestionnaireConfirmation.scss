@@ -1,0 +1,13 @@
+.personal-route-invitation {
+  &__item-blocks {
+
+    @media screen and (min-width: 500px) {
+      width: 730px;
+      height: 350px;
+    }
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: clip;
+    margin-bottom: 27px;
+  }
+}

@@ -1,0 +1,27 @@
+@use 'src/configurations/theme' as theme;
+
+@mixin map-filter-item-base {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.map-filter-item {
+  &_active {
+    background: theme.$primary;
+    color: theme.$primaryTextColor;
+    @include map-filter-item-base;
+  }
+
+  &_passive {
+    background: theme.$primaryTextColor;
+    color: #262626;
+    @include map-filter-item-base;
+  }
+}

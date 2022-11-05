@@ -1,0 +1,21 @@
+@use 'src/configurations/theme' as theme;
+
+.title-switch-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8px 20px;
+  width: max-content;
+  height: min-content;
+  color: theme.$primaryTextColor;
+  background: theme.$primary;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 200px;
+  cursor: pointer;
+
+  &_active {
+    background: #F3757E;
+  }
+}

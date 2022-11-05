@@ -7,15 +7,19 @@ import {
 import {NAVIGATION} from "./configurations/navigation.jsx";
 import {useEffect} from "react";
 import {fetchInterests} from "./api/interestsAPI.js";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {fetchPlaces} from "./api/placesAPI.js";
+import {useGeolocation} from "./libraries/geolocation.js";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    // dispatch(fetchInterests());
+    dispatch(fetchInterests());
     dispatch(fetchPlaces());
   }, []);
+
+  const [lng, ltd, status] = useGeolocation();
+  console.log(lng, ltd, status);
 
   return (
     <div className="app">

@@ -28,7 +28,17 @@
     font-weight: 700;
     background: theme.$primary;
     color: theme.$primaryTextColor;
-    padding: 8px 15px;
+    padding: 8px 19px;
     @include choice-item-base;
+  }
+
+  &__text {
+    &_passive {
+      position: relative;
+      right: 15px;
+    }
+    &_active {
+      position: static;
+    }
   }
 }

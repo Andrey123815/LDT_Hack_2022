@@ -1,0 +1,37 @@
+.bonus-system-banner {
+  display: flex;
+  flex-direction: row;
+
+  width: 50vw;
+  height: 160px;
+  padding: 25px 30px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  color: #000000;
+  gap: 50px;
+
+  position: absolute;
+  bottom: 2%;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+  }
+}
+
+.info {
+  &__header {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+
+    margin-bottom: 16px;
+  }
+  &__invitation {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

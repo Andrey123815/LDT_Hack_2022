@@ -1,0 +1,50 @@
+@use 'src/configurations/theme' as theme;
+
+@mixin base-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.point-card-header {
+  width: 95%;
+  height: 80px;
+  color: theme.$primary;
+  @include base-header;
+  padding-left: 6px;
+  padding-right: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.04), 0 0 12px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+
+  position: absolute;
+  top: 2.5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+
+  &__item {
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+  }
+
+  &__left-part {
+    @include base-header;
+    gap: 32px;
+
+    img {
+      margin-right: 6px;
+    }
+  }
+  &__right-part {
+    @include base-header;
+    gap: 12px;
+
+    img {
+      margin-left: 26px;
+    }
+  }
+}

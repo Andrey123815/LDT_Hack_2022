@@ -3,7 +3,7 @@ import SimpleButton from "../../UI-KIT/SimpleButton/SimpleButton.jsx";
 import './LoginPage.scss';
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import {useNavigate} from "react-router-dom";
-import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../components/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
+import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../screenTemplates/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import {TextField} from "@mui/material";
@@ -60,7 +60,7 @@ function LoginPage() {
     <QuestionnaireTemplate page={TEMPLATE_TYPE.verify}>
       <div className="login-page">
         <QuestionnaireHeaderIcon size='large' />
-        <PageTitle>Введите данные, чтобы войти в личный кабинет</PageTitle>
+        <PageTitle>Укажите номер телефона чтобы получить бонусы в программе "Друзья ВДНХ"</PageTitle>
         <div className="input-block">
           <TextField
             id="standard-helperText"

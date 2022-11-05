@@ -35,8 +35,9 @@
 
   &_low-priority {
     @include simple-button-base;
-    background: theme.$passiveElementBG;
+    background: #FFFFFF;
     color: theme.$passiveTextColor;
+    filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.1));
     &:hover {
       background: theme.$hoverPassiveElementBG;
     }

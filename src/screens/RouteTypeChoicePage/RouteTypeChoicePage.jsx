@@ -3,7 +3,7 @@ import RouteTypeItem from "../../components/RouteTypeItem/RouteTypeItem.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import './RouteTypeChoicePage.scss';
-import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../components/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
+import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../screenTemplates/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import {ROUTE_TYPES} from "../../configurations/routeTypes.js";
 import {useNavigate} from "react-router-dom";
 
@@ -15,8 +15,15 @@ function RouteTypeChoicePage(props) {
         <QuestionnaireHeaderIcon size='large' />
         <PageTitle>Выберите формат</PageTitle>
         <div className="route-type__items">
-          {ROUTE_TYPES.map(({img, description, navigateTo}) =>
-            <RouteTypeItem key={img} path={img} description={description} onClick={() => navigate(navigateTo)} />
+          {ROUTE_TYPES.map(({img, description, navigateTo, redirectToOuterSource}, index) =>
+            <RouteTypeItem
+              key={img + index}
+              path={img}
+              description={description}
+              onClick={() => {navigateTo
+                ? navigate(navigateTo)
+                : redirectToOuterSource()
+              }} />
           )}
         </div>
       </div>

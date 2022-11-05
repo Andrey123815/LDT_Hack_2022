@@ -8,7 +8,7 @@ function PageTitle(props) {
          style={{marginTop:
              !isMobile() && props.marginTop && !props.withoutMargin
                ? props.marginTop
-               : props.withoutMargin ? '0' : '20px'}}>
+               : props.withoutMargin ? '0' : '20px', width: props.width}}>
       {props.children}
     </div>
   );

@@ -1,0 +1,12 @@
+@use 'src/configurations/theme' as theme;
+
+.map-filter-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px 12px;
+  box-sizing: border-box;
+  gap: 15px;
+  background: theme.$sideMapBlocksBG;
+  border-radius: 4px;
+}

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../components/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
+import React, {useEffect, useState} from 'react';
+import QuestionnaireTemplate, {TEMPLATE_TYPE} from "../../screenTemplates/QuestionnaireTemplate/QuestionnaireTemplate.jsx";
 import QuestionnaireHeaderIcon from "../../UI-KIT/QuestionnaireHeaderIcon/QuestionnaireHeaderIcon.jsx";
 import PageTitle from "../../UI-KIT/PageTitle/PageTitle.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
@@ -7,14 +7,18 @@ import StandardButtonsBlock from "../../components/StandardButtonsBlock/Standard
 import {generateDefaultArr} from "../../libraries/generator.js";
 import QuestionnaireChoiceItem from "../../UI-KIT/QuestionnaireChoiceItem/QuestionnaireChoiceItem.jsx";
 import './CollectInterestsInfo.scss';
+import {useDispatch} from "react-redux";
+import {updateInterests} from "../../slices/questionnaire.js";
 
 const getFromBackendInterests = [
-  'Технологии', 'Выставки', 'Легенды', 'Парки', 'Спорт', 'Кафе', 'Москвариум', 'Космонавтика', ' Природа'
+  'Технологии', 'Выставки', 'Легенды', 'Парки', 'Спорт', 'Кафе', 'Москвариум', 'Космонавтика', 'Природа'
 ];
 
 function CollectInterestsInfo() {
   const [selectedInterests, setSelectedInterests] =
     useState(generateDefaultArr(getFromBackendInterests.length));
+
+  const dispatch = useDispatch();
 
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.collectInterestsInfo}>
@@ -27,8 +31,13 @@ function CollectInterestsInfo() {
               key={variant}
               active={selectedInterests[index]}
               onClick={() => {
-                setSelectedInterests(selectedInterests
-                  .map((item, ind) => ind === index ? !item : item));
+                const activeChoice = selectedInterests
+                  .map((item, ind) => ind === index ? !item : item);
+                setSelectedInterests(activeChoice);
+                dispatch(updateInterests(activeChoice
+                  .filter(item => item)
+                  .map((item, index) => getFromBackendInterests[index])
+                ));
               }}
             >
               {variant}

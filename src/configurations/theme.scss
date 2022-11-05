@@ -11,7 +11,7 @@ $_lightTheme: (
         "hoverPassiveElementBG": #dfe1e3,
         "passiveTextColor": #BDBEBF,
         "lowPriorityButton": #F3F4F6,
-
+        "sideMapBlocksBG": #F7EBE6
 );
 
 @function setThemeColors($theme) {
@@ -27,7 +27,7 @@ $_lightTheme: (
           "passiveElementBG": map-get($theme, "passiveElementBG"),
           "hoverPassiveElementBG": map-get($theme, "hoverPassiveElementBG"),
           "passiveTextColor": map-get($theme, "passiveTextColor"),
-
+          "sideMapBlocksBG": map-get($theme, "sideMapBlocksBG"),
   );
 
   @return $appColors;
@@ -46,3 +46,4 @@ $routeExplanationText: map-get($THEME, "routeExplanationText");
 $passiveElementBG: map-get($THEME, "passiveElementBG");
 $hoverPassiveElementBG: map-get($THEME, "hoverPassiveElementBG");
 $passiveTextColor: map-get($THEME, "passiveTextColor");
+$sideMapBlocksBG: map-get($THEME, "sideMapBlocksBG");

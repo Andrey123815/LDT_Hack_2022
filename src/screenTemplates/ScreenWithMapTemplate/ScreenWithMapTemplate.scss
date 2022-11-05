@@ -1,0 +1,41 @@
+@use '../../configurations/theme' as theme;
+
+.screen-with-map {
+  color: theme.$primaryTextColor;
+  text-align: left;
+  overflow: hidden;
+  &__main-content {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.main-content {
+  &__side-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 25%;
+    padding: 120px 40px 20px 30px;
+    background: theme.$primary;
+  }
+  &__map {
+    width: 75%;
+    height: 100vh;
+  }
+}
+
+.side-block {
+  &__page-title {
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 46px;
+    color: theme.$primaryTextColor;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
