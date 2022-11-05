@@ -3,7 +3,7 @@ name: Frontend Build
 on:
   push:
     branches:
-      - reworking
+      - main
 
 
 jobs:
