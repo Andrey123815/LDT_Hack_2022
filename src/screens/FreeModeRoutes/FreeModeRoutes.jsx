@@ -8,11 +8,15 @@ import {useSelector} from "react-redux";
 
 function FreeModeRoutes() {
   const pointsWithFilters = useSelector(state => state.places.placesWithFilters)
+
+  console.log('pointsWithFilters', pointsWithFilters)
+
   return (
     <>
       <ScreenWithMapTemplate
         title="Выберите, что вас интересует"
         places={pointsWithFilters}
+        allPoints={true}
       >
         <MapFilterBlock/>
         <InviteToLoyaltyProgram />

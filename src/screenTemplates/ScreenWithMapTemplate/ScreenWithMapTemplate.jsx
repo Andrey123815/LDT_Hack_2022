@@ -21,7 +21,7 @@ function ScreenWithMapTemplate(props) {
           {props.children}
         </div>
         <div className="main-content__map">
-          <Map places={props.places} routes={props.routes} statusRoutes={props.statusRoutes}/>
+          <Map places={props.places} routes={props.routes} statusRoutes={props.statusRoutes} allPoints={props.allPoints}/>
         </div>
       </div>
     </div>
