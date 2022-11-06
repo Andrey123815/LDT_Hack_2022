@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
 
-  width: 50vw;
+  width: 47vw;
   height: 160px;
   padding: 25px 30px;
   background: #FFFFFF;
@@ -12,6 +12,7 @@
 
   position: absolute;
   bottom: 2%;
+  left: 4%;
 
   & > img {
     object-fit: cover;

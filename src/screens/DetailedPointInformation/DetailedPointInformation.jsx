@@ -6,6 +6,7 @@ import BackToMapButton from "../../UI-KIT/BackToMapButton/BackToMapButton.jsx";
 import BonusSystemBanner from "../../components/BonusSystemBanner/BonusSystemBanner.jsx";
 import AccentButton from "../../UI-KIT/AccentButton/AccentButton.jsx";
 import BackQuestionnaireArrow from "../../UI-KIT/BackQuestionnaireArrow/BackQuestionnaireArrow.jsx";
+import {useNavigate} from "react-router-dom";
 
 const TITLE_SWITCHER_ITEMS = {
   'Описание объекта': 'Невозможно не заметить на ВДНХ павильон «Космос» – это действительно уникальное здание и архитектурная гордость. Его история началась 1 августа 1939 года, только тогда он назывался «Механизация» и выглядел иначе – это был огромный ангар. Современный вид павильон обрел только в 1954-м. Именно тогда над зданием появился знаменитый купол. Он опирался на четыре мощные арки, а в центре поставили звезду с Троицкой башни московского Кремля. В 1967 году павильон получил нынешнее название – «Космос», а перед зданием установили полноразмерный макет ракеты-носителя «Восток» в масштабе 1:1.\n\tВысота макета составляет 38 метров. Павильон пережил не одно переименование и смену экспозиции, а в 2018 году предстал перед посетителями ВДНХ во всей красе после масштабной реставрации.',
@@ -13,14 +14,15 @@ const TITLE_SWITCHER_ITEMS = {
   'Легенда': 'В центре «Космонавтика и авиация» можно увидеть более 120 уникальных образцов летательной и космической техники, экспонаты оборонно-промышленных предприятий, свыше 2 тысяч редких архивных документов, фотографий и видеоматериалов об истории космических достижений. Также в павильоне работает сувенирный магазин ВДНХ.\nС правилами посещения музейно-выставочных площадок можно ознакомиться по ссылке.'
 };
 
-function DetailedPointInformation(props) {
+function DetailedPointInformation() {
   const [activeTitle, setActiveTitle] = useState(Object.keys(TITLE_SWITCHER_ITEMS)[0]);
+  const navigate = useNavigate();
   return (
     <div className="detailed-point-information">
       <MainHeader />
       <div className="detailed-point-information__main-content">
         <div className="main-content__info">
-          <BackToMapButton>Вернуться на карту</BackToMapButton>
+          <BackToMapButton onClick={() => navigate(-1)}>Вернуться на карту</BackToMapButton>
           <header className="info__object-name">{'Павильон №34. Центр «Космонавтика и авиация»'}</header>
           <div className="info__control-line">
             <TitleSwitcher
