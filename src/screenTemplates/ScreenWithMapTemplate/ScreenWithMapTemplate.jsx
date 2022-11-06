@@ -5,6 +5,12 @@ import Map from "../../components/Map/Map.jsx";
 import MapModeControlPanel from "../../components/MapModeControlPanel/MapModeControlPanel.jsx";
 import MapScaleBar from "../../components/MapScaleBar/MapScaleBar.jsx";
 
+const mapState = {
+  center: [55.831818, 37.628951],
+  zoom: 14,
+  behaviors: ["default", "scrollZoom", "drag"],
+};
+
 function ScreenWithMapTemplate(props) {
   const [zoom, setZoom] = useState(14);
   return (
@@ -21,7 +27,7 @@ function ScreenWithMapTemplate(props) {
           {props.children}
         </div>
         <div className="main-content__map">
-          <Map places={props.places} routes={props.routes} zoom={zoom}/>
+          <Map places={props.places} routes={props.routes} mapState={mapState}/>
         </div>
       </div>
     </div>

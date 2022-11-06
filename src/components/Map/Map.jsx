@@ -2,11 +2,11 @@ import React, {useRef, useState} from "react";
 import {YMaps, Map, Placemark, Clusterer} from "react-yandex-maps";
 import "./Map.scss";
 
-const mapState = {
-  center: [55.831818, 37.628951],
-  // zoom: 14,
-  behaviors: ["default", "scrollZoom"],
-};
+// const mapState = {
+//   center: [55.831818, 37.628951],
+//   // zoom: 14,
+//   behaviors: ["default", "scrollZoom", "drag"],
+// };
 
 const createBalloon = (title, preview_text, pic, type) => {
   return {
@@ -46,9 +46,9 @@ const createPlacemark = (type) => {
 };
 
 const AppMap = React.memo((props) => {
-  const {places, routes} = props;
+  const {places, routes, mapState} = props;
   const [ymaps, setYmaps] = useState(null);
-  const routeThemes = ['#336AF7', '#6dd0b1', '#E22C38'];
+  const routeThemes = ['#1141bd', '#2de5ac', '#e5c233'];
   const mapRoutes = useRef(null);
 
   const getRoute = (ref, routes) => {
@@ -65,7 +65,8 @@ const AppMap = React.memo((props) => {
             // Параметры маршрутизации.
             params: {
               // Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
-              results: 2
+              results: 2,
+              routingMode: 'pedestrian'
             }
           },
           {
@@ -76,9 +77,9 @@ const AppMap = React.memo((props) => {
             routeStrokeColor: "#000088",
             routeActiveStrokeWidth: 6,
             routeActiveStrokeColor: routeThemes[i],
-            viaPointDraggable: true,
-            pinVisible: true,
-            routeActivePedestrianSegmentStrokeStyle: 'dashed'
+            // viaPointDraggable: true,
+            // pinVisible: true,
+            // routeActivePedestrianSegmentStrokeStyle: 'dashed'
           }
         );
         personalRoutesOnMap.push(multiRoute);
@@ -89,8 +90,6 @@ const AppMap = React.memo((props) => {
       personalRoutesOnMap.forEach((singlePersonalMultiRoute) => ref.geoObjects.add(singlePersonalMultiRoute));
     }
   };
-
-  mapState.zoom = props.zoom;
 
   return (
     <div className="layer">

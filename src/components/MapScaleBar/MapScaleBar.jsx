@@ -3,20 +3,39 @@ import './MapScaleBar.scss';
 
 function MapScaleBar(props) {
 
-  // const [isHovering, setIsHovering] = useState(false);
-  //
-  // const handleMouseEnter = () => {
-  //   setIsHovering(true);
-  // };
-  //
-  // const handleMouseLeave = () => {
-  //   setIsHovering(false);
-  // };
+  const [isHoveringFirst, setIsHoveringFirst] = useState(false);
+  const [isHoveringSecond, setIsHoveringSecond] = useState(false);
+
+  const handleMouseEnter = (idx) => {
+    if (idx === 2) {
+      return setIsHoveringSecond(true);
+    }
+    setIsHoveringFirst(true);
+  };
+
+  const handleMouseLeave = (idx) => {
+    if (idx === 2) {
+      return setIsHoveringSecond(false);
+    }
+    setIsHoveringFirst(false);
+  };
 
   return (
     <div className="map-scale-bar">
-      <img onClick={props.scalePlus} src="/icons/scale-plus-white.svg" alt="+scale" />
-      <img onClick={props.scaleMinus} src="/icons/scale-minus-white.svg" alt="-scale" />
+      <img
+        // onClick={props.scalePlus}
+        onMouseEnter={() => handleMouseEnter(1)}
+        onMouseLeave={() => handleMouseLeave(1)}
+        src={`/icons/scale-plus-${isHoveringFirst ? 'red' : 'white'}.svg`}
+        alt="+scale"
+      />
+      <img
+        // onClick={props.scaleMinus}
+        onMouseEnter={() => handleMouseEnter(2)}
+        onMouseLeave={() => handleMouseLeave(2)}
+        src={`/icons/scale-minus-${isHoveringSecond ? 'red' : 'white'}.svg`}
+        alt="-scale"
+      />
     </div>
   );
 }
