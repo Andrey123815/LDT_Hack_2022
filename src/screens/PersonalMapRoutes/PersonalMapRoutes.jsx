@@ -34,6 +34,8 @@ function PersonalMapRoutes() {
     true
   );
 
+  console.log(activeRouteNumbers.map(route => showAllRoutes || route))
+
   return (
     <>
       <ScreenWithMapTemplate

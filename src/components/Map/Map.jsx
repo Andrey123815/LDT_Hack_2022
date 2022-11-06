@@ -7,6 +7,7 @@ import {createPlacemark} from "../../libraries/placemark.js";
 
 const AppMap = React.memo((props) => {
   const {places, routes, statusRoutes} = props;
+  console.log('statusRoutes', statusRoutes)
   const [ymaps, setYmaps] = useState(null);
   const routeThemes = ['#1141bd', '#e5c233', '#2de5ac'];
   const mapRoutes = useRef(null);
@@ -63,8 +64,8 @@ const AppMap = React.memo((props) => {
     }
   };
 
-  console.log(places
-    .filter((routePoints, index) => statusRoutes[index]));
+  // console.log(places
+  //   .filter((routePoints, index) => statusRoutes[index]));
 
   return (
     <div className="layer">
@@ -87,12 +88,12 @@ const AppMap = React.memo((props) => {
               geoObjectHideIconOnBalloonOpen: false
             }}
           >
-            {places && places
-              .filter((routePoints, index) => statusRoutes[index])
+            {places && places.length && (props.allPoints ? places :
+              places.filter((routePoints, index) => statusRoutes[index])
               .reduce(
                 (arr, currentValue) => {return arr.concat(currentValue)},
                 []
-              )
+              ))
               .filter(({coordinates}) => coordinates !== undefined)
               .map((place, idx) => {
                 const {coordinates, title, preview_text, pic, type_place, type} = place;
