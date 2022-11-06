@@ -1,10 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {INTERESTS} from "../screens/CollectInterestsInfo/CollectInterestsInfo.jsx";
-
-// const initialInterests = {};
-// INTERESTS.forEach(interest =>
-//   initialInterests[interest] = false
-// );
 
 const initialState = {
   questionnaireChoice: {
@@ -13,7 +7,8 @@ const initialState = {
     interests: {},
     transport: 'Пешком',
     freeTime: 1,
-  }
+  },
+  completed: false
 }
 
 export const questionnaireSlice = createSlice({
@@ -35,6 +30,9 @@ export const questionnaireSlice = createSlice({
     updateFreeTime(state, action) {
       state.questionnaireChoice.freeTime = action.payload;
     },
+    completeQuests(state) {
+      state.completed = true;
+    },
   },
 })
 
@@ -43,7 +41,8 @@ export const {
   updateAdditionalMembers,
   updateFreeTime,
   updateInterests,
-  updateTransport
+  updateTransport,
+  completeQuests
 } = questionnaireSlice.actions
 
 export default questionnaireSlice.reducer

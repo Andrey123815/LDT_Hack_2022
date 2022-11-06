@@ -11,7 +11,7 @@ import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPersonalRoutes} from "../../api/personalRoutesAPI.js";
-import {INTERESTS} from "../CollectInterestsInfo/CollectInterestsInfo.jsx";
+import {completeQuests} from "../../slices/questionnaireSlice.js";
 
 const blockViewTypes = {
   tripTeamType: 'company',
@@ -36,7 +36,15 @@ function QuestionnaireConfirmation(props) {
   const questionnaire = useSelector(state => state.questionnaire.questionnaireChoice);
 
   const pickUpPersonalRoute = () => {
-    dispatch(fetchPersonalRoutes(questionnaire))
+    const transformObj = Object.assign(
+      {},
+      questionnaire,
+      {interests: Object.entries(questionnaire.interests).map(([key, value]) => value && key)}
+    );
+
+    dispatch(completeQuests);
+
+    dispatch(fetchPersonalRoutes(transformObj))
       .then(() =>
         navigate(NAV_ROUTES.personalRoutes)
       );

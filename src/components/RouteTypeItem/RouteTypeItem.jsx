@@ -9,7 +9,7 @@ function RouteTypeItem(props) {
             <RouteTypeIcon img={props.path} alt={props.description} />
             <div className="format-type-item__description">{props.description}</div>
           </div>
-          <img className="format-type-item__arrow" src="/icons/right-arrow.svg" alt="Right arrow" />
+          <img className="format-type-item__arrow" src="/icons/right-arrow-red.svg" alt="Right arrow" />
       </div>
   );
 }

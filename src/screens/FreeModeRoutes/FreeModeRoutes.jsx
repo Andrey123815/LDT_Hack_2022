@@ -13,6 +13,9 @@ const MAP_OBJECT_FILTERS = [
 ];
 
 function FreeModeRoutes(props) {
+
+
+
   return (
     <>
       <ScreenWithMapTemplate title="Выберите, что вас интересует">

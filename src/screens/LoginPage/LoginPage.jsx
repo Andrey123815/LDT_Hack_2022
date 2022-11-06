@@ -14,6 +14,8 @@ import {
 } from "../../libraries/autoInputPrettier.js";
 import {Regex} from "../../configurations/inputValidation.js";
 import InputNotification from "../../components/InputNotification/InputNotification.jsx";
+import {useDispatch} from "react-redux";
+import {auth} from "../../slices/loyalitySlice.js";
 
 const focus = (e) => {
   if (e.target.value === "") {
@@ -41,8 +43,9 @@ const keyUp = (e) => {
 }
 
 function LoginPage() {
-  const width = isMobile() ? '85%' : '45%';
+  const width = isMobile() ? '85%' : '52%';
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [isInputValid, setIsInputValid] = useState(true);
   const [phone, setPhone] = useState('');
@@ -54,6 +57,7 @@ function LoginPage() {
   useEffect(() => {
     isValidInputData()
   }, [phone]);
+
 
 
   return (
@@ -79,7 +83,8 @@ function LoginPage() {
           }
           <SimpleButton onClick={() => {
             if (isInputValid) {
-              navigate(NAV_ROUTES.collectTripTeamInfo);
+              dispatch(auth(phone));
+              navigate(-1);
             }
           }}>
             Войти

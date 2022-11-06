@@ -4,7 +4,7 @@ import "./Map.scss";
 
 const mapState = {
   center: [55.831818, 37.628951],
-  zoom: 14,
+  // zoom: 14,
   behaviors: ["default", "scrollZoom"],
 };
 
@@ -47,24 +47,16 @@ const createPlacemark = (type) => {
 
 const AppMap = React.memo((props) => {
   const {places, routes} = props;
-
   const [ymaps, setYmaps] = useState(null);
-  // Завел для хранения маршрута переменную(аналогия переменной класса в стэйтлесс компоненте)
+  const routeThemes = ['#336AF7', '#6dd0b1', '#E22C38'];
   const mapRoutes = useRef(null);
 
   const getRoute = (ref, routes) => {
     if (ymaps && routes) {
-      // const personalRoutesOnMap = [];
-
-      // console.log('routes', routes);
-
-      // for (let route of routes) {
-      //   console.log('route in cycle', route);
-      const routePointsCoordinates = routes[0].main.map(({coordinates}) => coordinates);
-      console.log('routePointsCoordinates', routePointsCoordinates)
-
-        // const routePointsCoordinates = route.places.map(({coordinates}) => coordinates);
-        // console.log('routePointsCoordinates', routePointsCoordinates)
+      const personalRoutesOnMap = [];
+      let i = 0;
+      for (let route of routes) {
+        const routePointsCoordinates = route.main.map(({coordinates}) => coordinates);
 
         const multiRoute = new ymaps.multiRouter.MultiRoute(
           {
@@ -80,29 +72,29 @@ const AppMap = React.memo((props) => {
             // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
             boundsAutoApply: true,
             // Внешний вид линии маршрута.
+            routeStrokeWidth: 2,
+            routeStrokeColor: "#000088",
             routeActiveStrokeWidth: 6,
-            routeActiveStrokeColor: "#fa6600"
+            routeActiveStrokeColor: routeThemes[i],
+            viaPointDraggable: true,
+            pinVisible: true,
+            routeActivePedestrianSegmentStrokeStyle: 'dashed'
           }
         );
-      console.log('multiRoute', multiRoute)
-        mapRoutes.current = multiRoute;
-        ref.geoObjects.add(multiRoute);
-        // console.log('before return', multiRoute)
-        // return;
-        // personalRoutesOnMap.push(multiRoute);
-      // }
-
+        personalRoutesOnMap.push(multiRoute);
+        i++;
+      }
       // Кладем полученный маршрут в переменную
-      // mapRoutes.current = personalRoutesOnMap;
-      // personalRoutesOnMap.forEach((singlePersonalMultiRoute) => ref.geoObjects.add(singlePersonalMultiRoute));
-      // ref.geoObjects.add(multiRoute);
-      // console.log('way points', mapRoutes.current.getWayPoints());
+      mapRoutes.current = personalRoutesOnMap;
+      personalRoutesOnMap.forEach((singlePersonalMultiRoute) => ref.geoObjects.add(singlePersonalMultiRoute));
     }
   };
 
+  mapState.zoom = props.zoom;
+
   return (
     <div className="layer">
-      <YMaps query={{ apikey: '2d683523-0eda-4943-91e0-73597aca4777' }}>
+      <YMaps query={{apikey: '2d683523-0eda-4943-91e0-73597aca4777'}}>
         <Map
           state={mapState}
           onClick={closeCurrentBalloon}
@@ -123,15 +115,18 @@ const AppMap = React.memo((props) => {
           >
             {places && places
               .filter(({coordinates}) => coordinates !== undefined)
-              .map(({coordinates, title, preview_text, pic, type}) => (
-                <Placemark
-                  key={coordinates.toString()}
-                  geometry={coordinates}
-                  properties={createBalloon(title, preview_text, pic, type)}
-                  options={createPlacemark(type)}
-                  modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
-                />
-              ))}
+              .map((place, idx) => {
+                const {coordinates, title, preview_text, pic, type_place} = place;
+                return (
+                  <Placemark
+                    key={title + idx}
+                    geometry={coordinates}
+                    properties={createBalloon(title, preview_text, pic, type_place)}
+                    options={createPlacemark(type_place)}
+                    modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
+                  />
+                );
+              })}
           </Clusterer>
         </Map>
       </YMaps>
