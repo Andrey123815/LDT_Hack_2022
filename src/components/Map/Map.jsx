@@ -94,7 +94,7 @@ const AppMap = React.memo((props) => {
 
   return (
     <div className="layer">
-      <YMaps query={{apikey: '2d683523-0eda-4943-91e0-73597aca4777'}}>
+      <YMaps query={{ apikey: '2d683523-0eda-4943-91e0-73597aca4777' }}>
         <Map
           state={mapState}
           onClick={closeCurrentBalloon}
