@@ -7,11 +7,13 @@ import StandardButtonsBlock from "../../components/StandardButtonsBlock/Standard
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import HoursCounter from "../../components/HoursCounter/HoursCounter.jsx";
 import {isMobile} from "../../libraries/screenTypeCheck";
-import {useDispatch} from "react-redux";
-import {updateFreeTime} from "../../slices/questionnaire.js";
+import {useDispatch, useSelector} from "react-redux";
+import {updateFreeTime} from "../../slices/questionnaireSlice.js";
 
 function CollectTimingInfo() {
-  const [hoursAmount, setHoursAmount] = useState(5);
+  const [hoursAmount, setHoursAmount] = useState(
+    useSelector(state => state.questionnaire.questionnaireChoice.freeTime)
+  );
 
   const dispatch = useDispatch();
   useEffect(() => {

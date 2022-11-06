@@ -7,12 +7,12 @@ import QuestionnaireChoiceItem from "../../UI-KIT/QuestionnaireChoiceItem/Questi
 import StandardButtonsBlock from "../../components/StandardButtonsBlock/StandardButtonsBlock.jsx";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import {TRANSPORT_TYPES} from "../../configurations/defaultListsItems/transportTypes.js";
-import {useDispatch} from "react-redux";
-import {updateTransport} from "../../slices/questionnaire.js";
+import {useDispatch, useSelector} from "react-redux";
+import {updateTransport} from "../../slices/questionnaireSlice.js";
 
-function CollectTransportInfo(props) {
+function CollectTransportInfo() {
   const [selectedTransport, setSelectedTransport] =
-    useState(TRANSPORT_TYPES[3]);
+    useState(useSelector(state => state.questionnaire.questionnaireChoice.transport));
 
   const dispatch = useDispatch();
 

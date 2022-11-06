@@ -3,10 +3,11 @@ import './MapFilterBlock.scss';
 import MapPointsFilterItem from "../../UI-KIT/MapPointsFilterItem/MapPointsFilterItem.jsx";
 
 function MapFilterBlock(props) {
+  const [state, setState] = useState(initState);
   return (
     <div className="map-filter-block">
       {props.items.map(filter =>
-        <MapPointsFilterItem active={true}>
+        <MapPointsFilterItem onClick={} active={true}>
           {filter}
         </MapPointsFilterItem>
       )}

@@ -4,10 +4,11 @@ const initialState = {
   questionnaireChoice: {
     tripTeamType: '',
     additionalMembers: '',
-    interests: [],
-    transport: '',
+    interests: {},
+    transport: 'Пешком',
     freeTime: 1,
-  }
+  },
+  completed: false
 }
 
 export const questionnaireSlice = createSlice({
@@ -29,6 +30,9 @@ export const questionnaireSlice = createSlice({
     updateFreeTime(state, action) {
       state.questionnaireChoice.freeTime = action.payload;
     },
+    completeQuests(state) {
+      state.completed = true;
+    },
   },
 })
 
@@ -37,7 +41,8 @@ export const {
   updateAdditionalMembers,
   updateFreeTime,
   updateInterests,
-  updateTransport
+  updateTransport,
+  completeQuests
 } = questionnaireSlice.actions
 
 export default questionnaireSlice.reducer

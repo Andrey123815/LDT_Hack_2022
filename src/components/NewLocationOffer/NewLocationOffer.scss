@@ -9,7 +9,7 @@
   background: theme.$sideMapBlocksBG;
 
   &__text {
-    width: 255px;
+    width: 210px;
     height: 55px;
     font-weight: 500;
     font-size: 16px;
@@ -17,4 +17,9 @@
     letter-spacing: 0.1px;
     color: #000000;
   }
+}
+
+button.accent-button {
+  margin-top: auto;
+  margin-bottom: auto;
 }
