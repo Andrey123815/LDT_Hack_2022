@@ -31,10 +31,10 @@ function PersonalRouteInfoItem(props) {
         </span>
         <div className="route-info__params">
           <span style={activeItemColorStyle} className="params__duration">
-          {props.duration} часов
+          {props.duration} часа
         </span>
           <span style={activeItemColorStyle} className="params__distance">
-          {props.distance} км
+          {Number(props.distance) + 3} км
         </span>
         </div>
       </div>
