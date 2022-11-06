@@ -3,7 +3,7 @@ import './PersonalRouteInfoItem.scss';
 
 function PersonalRouteInfoItem(props) {
   return (
-    <div className="personal-route-item" style={{borderBottom: `11px solid${props.theme}` }}>
+    <div className="personal-route-item" style={{borderBottom: `11px solid ${props.theme}`}}>
       <img src="/images/routeTypes/personal-routes.svg" alt="personal route preview" />
       <div className="personal-route-item__route-info">
         <span className="route-info__title">

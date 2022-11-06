@@ -60,7 +60,7 @@ const AppMap = React.memo((props) => {
 
       // for (let route of routes) {
       //   console.log('route in cycle', route);
-      const routePointsCoordinates = routes[0].places.map(({coordinates}) => coordinates);
+      const routePointsCoordinates = routes[0].main.map(({coordinates}) => coordinates);
       console.log('routePointsCoordinates', routePointsCoordinates)
 
         // const routePointsCoordinates = route.places.map(({coordinates}) => coordinates);
@@ -102,7 +102,7 @@ const AppMap = React.memo((props) => {
 
   return (
     <div className="layer">
-      <YMaps>
+      <YMaps query={{ apikey: '2d683523-0eda-4943-91e0-73597aca4777' }}>
         <Map
           state={mapState}
           onClick={closeCurrentBalloon}

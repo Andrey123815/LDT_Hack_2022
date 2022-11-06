@@ -1,11 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {INTERESTS} from "../screens/CollectInterestsInfo/CollectInterestsInfo.jsx";
+
+// const initialInterests = {};
+// INTERESTS.forEach(interest =>
+//   initialInterests[interest] = false
+// );
 
 const initialState = {
   questionnaireChoice: {
     tripTeamType: '',
     additionalMembers: '',
-    interests: [],
-    transport: '',
+    interests: {},
+    transport: 'Пешком',
     freeTime: 1,
   }
 }

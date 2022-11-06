@@ -9,4 +9,8 @@
 
   width: max-content;
   height: min-content;
+
+  &:hover {
+    filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.2));
+  }
 }
