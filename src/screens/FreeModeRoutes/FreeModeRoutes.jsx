@@ -5,21 +5,11 @@ import NewLocationOffer from "../../components/NewLocationOffer/NewLocationOffer
 import MapFilterBlock from "../../components/MapFilterBlock/MapFilterBlock.jsx";
 import InviteToLoyaltyProgram from "../../components/InviteToLoyaltyProgram/InviteToLoyaltyProgram.jsx";
 
-const MAP_OBJECT_FILTERS = [
-  'Еда', 'Зеленая зона', 'Павильон', 'Спорт', 'Фонтан', 'Инфоцентр', 'Пруд',
-  'Пикник', 'Музей', 'Парковка', 'Остановка', 'Вход', 'Туалеты', 'Детская площадка',
-  'Памятник', 'Мастерская','Такси', 'Читальня', 'Въезд', 'Банкомат', 'Сувениры',
-  'Храм', 'Билеты'
-];
-
-function FreeModeRoutes(props) {
-
-
-
+function FreeModeRoutes() {
   return (
     <>
       <ScreenWithMapTemplate title="Выберите, что вас интересует">
-        <MapFilterBlock items={MAP_OBJECT_FILTERS}/>
+        <MapFilterBlock/>
         <InviteToLoyaltyProgram />
         <NewLocationOffer />
       </ScreenWithMapTemplate>
