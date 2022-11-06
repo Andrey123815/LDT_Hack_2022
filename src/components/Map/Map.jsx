@@ -63,6 +63,9 @@ const AppMap = React.memo((props) => {
     }
   };
 
+  console.log(places
+    .filter((routePoints, index) => statusRoutes[index]));
+
   return (
     <div className="layer">
       <YMaps query={{apikey: API_KEY}}>
@@ -85,6 +88,11 @@ const AppMap = React.memo((props) => {
             }}
           >
             {places && places
+              .filter((routePoints, index) => statusRoutes[index])
+              .reduce(
+                (arr, currentValue) => {return arr.concat(currentValue)},
+                []
+              )
               .filter(({coordinates}) => coordinates !== undefined)
               .map((place, idx) => {
                 const {coordinates, title, preview_text, pic, type_place, type} = place;

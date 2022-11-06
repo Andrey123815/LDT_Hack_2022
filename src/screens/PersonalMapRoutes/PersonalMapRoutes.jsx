@@ -13,10 +13,13 @@ function PersonalMapRoutes() {
 
   const [activeRouteNumbers, setActiveRouteNumbers] = useState(new Array(3).fill(false));
 
-  let pointsInPersonalRoutes = [];
-  personalRoutes.routes
-    .map(({main, sup_points}) => main.map(place => place).concat(sup_points.map(places => places)))
-    .forEach(subArrayPoints => pointsInPersonalRoutes = pointsInPersonalRoutes.concat(subArrayPoints))
+  // let pointsInPersonalRoutes = [];
+  // personalRoutes.routes
+  //   .map(({main, sup_points}) => main.map(place => place).concat(sup_points.map(places => places)))
+  //   .forEach(subArrayPoints => pointsInPersonalRoutes = pointsInPersonalRoutes.concat(subArrayPoints))
+
+  let pointsInPersonalRoutes = personalRoutes.routes
+    .map(({main, sup_points}) => main.map(place => place).concat(sup_points.map(places => places)));
 
   const handlePersonalRouteChoose = (idx) => {
     setActiveRouteNumbers(
@@ -47,7 +50,7 @@ function PersonalMapRoutes() {
               theme={PERSONAL_ROUTE_ITEMS_THEME[index]}
               onClick={() => handlePersonalRouteChoose(index)}
               active={activeRouteNumbers[index]}
-              duration="5"
+              duration={Number((personalRoutes.routes[index].duration/60).toFixed(1)) + 1.5}
               distance="1"
             />
           )}
