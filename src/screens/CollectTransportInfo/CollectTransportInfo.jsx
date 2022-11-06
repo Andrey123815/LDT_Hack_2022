@@ -11,8 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {updateTransport} from "../../slices/questionnaireSlice.js";
 
 function CollectTransportInfo() {
-  const [selectedTransport, setSelectedTransport] =
-    useState(useSelector(state => state.questionnaire.questionnaireChoice.transport));
+  const selectedTransport = useSelector(state => state.questionnaire.questionnaireChoice.transport);
 
   const dispatch = useDispatch();
 
@@ -27,11 +26,7 @@ function CollectTransportInfo() {
               key={variant}
               active={selectedTransport === TRANSPORT_TYPES[index]}
               onClick={() => {
-                setSelectedTransport(selectedTransport === TRANSPORT_TYPES[index]
-                  ? ''
-                  : TRANSPORT_TYPES[index]
-                )
-                dispatch(updateTransport(selectedTransport));
+                dispatch(updateTransport(variant));
               }}
             >
               {variant}

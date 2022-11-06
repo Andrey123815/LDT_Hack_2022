@@ -42,7 +42,7 @@ function QuestionnaireConfirmation(props) {
       {interests: Object.entries(questionnaire.interests).map(([key, value]) => value && key)}
     );
 
-    dispatch(completeQuests);
+    dispatch(completeQuests());
 
     dispatch(fetchPersonalRoutes(transformObj))
       .then(() =>
@@ -54,7 +54,7 @@ function QuestionnaireConfirmation(props) {
   let flagAlreadyPushed = false;
   for (let key in questionnaire) {
     if (key === 'tripTeamType' || key === 'additionalMembers') {
-      if (questionnaire[key]) {
+      if (questionnaire[key] && questionnaire[key].length) {
         if (!flagAlreadyPushed) {
           resultQuestionnaireArray.push({
             title: blockTitles[key],

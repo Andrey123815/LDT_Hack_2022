@@ -59,8 +59,15 @@
     justify-content: space-between;
     margin-bottom: 3%;
   }
+  &__control-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    position: absolute;
+    bottom: 28%;
+  }
   &__object-description {
-    width: 67%;
+    width: 80%;
     margin-bottom: 3%;
   }
 }

@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow: auto;
+  max-height: 55%;
   padding: 15px 12px;
   box-sizing: border-box;
   gap: 15px;

@@ -42,7 +42,7 @@ function CollectTripTeamInfo() {
           {ADDITIONAL_VARIANTS.map(variant =>
             <QuestionnaireChoiceItem
               key={variant}
-              active={variant === additionalTeamMembers}
+              active={additionalTeamMembers.includes(variant)}
               onClick={() => {
                 dispatch(updateAdditionalMembers(variant));
               }}
