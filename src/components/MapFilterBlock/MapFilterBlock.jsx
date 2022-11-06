@@ -7,7 +7,7 @@ function MapFilterBlock(props) {
   return (
     <div className="map-filter-block">
       {props.items.map(filter =>
-        <MapPointsFilterItem onClick={} active={true}>
+        <MapPointsFilterItem active={true}>
           {filter}
         </MapPointsFilterItem>
       )}
