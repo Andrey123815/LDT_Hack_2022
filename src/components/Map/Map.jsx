@@ -1,58 +1,33 @@
 import React, {useRef, useState} from "react";
 import {YMaps, Map, Placemark, Clusterer} from "react-yandex-maps";
 import "./Map.scss";
-
-// const mapState = {
-//   center: [55.831818, 37.628951],
-//   // zoom: 14,
-//   behaviors: ["default", "scrollZoom", "drag"],
-// };
-
-const createBalloon = (title, preview_text, pic, type) => {
-  return {
-    balloonContentBody: `
-      <div class="balloon">
-        <img class="balloon__object-img" src="${pic}" width="86px" height="116px" alt="Place image" />
-        <div class="balloon__object-info">
-          <div class="object-info__header">
-            ${type}
-          </div>
-          <div class="object-info__title">
-            ${title}
-          </div>
-          <div class="object-info__more-info-button"><span>Подробнее</span></div>
-        </div>
-        <div>
-          <img class="object-info__mark" src="/placemarks/${type.toLowerCase()}.svg" width="40px" height="40px" alt=""/>
-        </div>
-      </div>
-    `,
-  };
-};
-
-function closeCurrentBalloon() {
-  let close = document.querySelector('ymaps[class$="-balloon__close-button"]');
-  if (close != null) {
-    close.click();
-  }
-}
-
-const createPlacemark = (type) => {
-  return {
-    iconLayout: 'default#image',
-    iconImageHref: `/placemarks/${type.toLowerCase()}.svg`,
-    iconImageSize: [70, 70],
-  };
-};
+import {API_KEY, MAP_STATE} from "../../configurations/map.js";
+import {closeCurrentBalloon, createBalloon} from "../../libraries/balloon.jsx";
+import {createPlacemark} from "../../libraries/placemark.js";
 
 const AppMap = React.memo((props) => {
-  const {places, routes, mapState} = props;
+  const {places, routes, statusRoutes} = props;
   const [ymaps, setYmaps] = useState(null);
-  const routeThemes = ['#1141bd', '#2de5ac', '#e5c233'];
+  const routeThemes = ['#1141bd', '#e5c233', '#2de5ac'];
   const mapRoutes = useRef(null);
 
-  const getRoute = (ref, routes) => {
+  const getRoute = (ref, routes, statusRoutes) => {
     if (ymaps && routes) {
+
+      let firstAdd = true;
+      statusRoutes.forEach((status, idx) => {
+        if (!status) {
+          firstAdd = false;
+          ref.geoObjects.remove(mapRoutes.current[idx])
+        } else if (mapRoutes.current && mapRoutes.current[idx]) {
+          ref.geoObjects.add(mapRoutes.current[idx])
+        }
+      })
+
+      if (!firstAdd) {
+        return;
+      }
+
       const personalRoutesOnMap = [];
       let i = 0;
       for (let route of routes) {
@@ -77,9 +52,6 @@ const AppMap = React.memo((props) => {
             routeStrokeColor: "#000088",
             routeActiveStrokeWidth: 6,
             routeActiveStrokeColor: routeThemes[i],
-            // viaPointDraggable: true,
-            // pinVisible: true,
-            // routeActivePedestrianSegmentStrokeStyle: 'dashed'
           }
         );
         personalRoutesOnMap.push(multiRoute);
@@ -93,14 +65,14 @@ const AppMap = React.memo((props) => {
 
   return (
     <div className="layer">
-      <YMaps query={{apikey: '2d683523-0eda-4943-91e0-73597aca4777'}}>
+      <YMaps query={{apikey: API_KEY}}>
         <Map
-          state={mapState}
+          state={MAP_STATE}
           onClick={closeCurrentBalloon}
           width="100%"
           height="100vh"
           modules={["multiRouter.MultiRoute"]}
-          instanceRef={ref => ref && getRoute(ref, routes)}
+          instanceRef={ref => ref && getRoute(ref, routes, statusRoutes)}
           onLoad={ymaps => setYmaps(ymaps)}
         >
           <Clusterer
@@ -115,13 +87,13 @@ const AppMap = React.memo((props) => {
             {places && places
               .filter(({coordinates}) => coordinates !== undefined)
               .map((place, idx) => {
-                const {coordinates, title, preview_text, pic, type_place} = place;
+                const {coordinates, title, preview_text, pic, type_place, type} = place;
                 return (
                   <Placemark
                     key={title + idx}
                     geometry={coordinates}
-                    properties={createBalloon(title, preview_text, pic, type_place)}
-                    options={createPlacemark(type_place)}
+                    properties={createBalloon(title, preview_text, pic, type_place || type)}
+                    options={createPlacemark(type_place || type)}
                     modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
                   />
                 );

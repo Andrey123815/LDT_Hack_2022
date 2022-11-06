@@ -4,7 +4,7 @@ import './BonusSystemBanner.scss';
 function BonusSystemBanner(props) {
   return (
     <div className="bonus-system-banner">
-      <img src="/images/bonus-cards.png" alt=""/>
+      <img src="/images/bonus-cards.png" width="40%" alt=""/>
       <div className="bonus-system-banner__info">
         <header className="info__header">Собирайте бонусы от ВДНХ!</header>
         <article className="info__invitation">

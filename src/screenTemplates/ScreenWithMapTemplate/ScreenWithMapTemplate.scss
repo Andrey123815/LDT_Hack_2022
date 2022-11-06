@@ -4,6 +4,10 @@
   color: theme.$primaryTextColor;
   text-align: left;
   overflow: hidden;
+
+  max-width: 100vw;
+  max-height: 100vh;
+
   &__main-content {
     display: flex;
     flex-direction: row;

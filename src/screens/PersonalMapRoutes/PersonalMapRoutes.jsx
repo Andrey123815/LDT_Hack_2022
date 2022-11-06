@@ -27,13 +27,18 @@ function PersonalMapRoutes() {
   }
 
   const showAllRoutes = activeRouteNumbers.reduce(
-    (acum, currentValue) => acum && !currentValue,
+    (ac, currentValue) => ac && !currentValue,
     true
   );
 
   return (
     <>
-      <ScreenWithMapTemplate title="Персональные маршруты" places={pointsInPersonalRoutes} routes={personalRoutes.routes}>
+      <ScreenWithMapTemplate
+        title="Персональные маршруты"
+        places={pointsInPersonalRoutes}
+        routes={personalRoutes.routes}
+        statusRoutes={activeRouteNumbers.map(route => showAllRoutes || route)}
+      >
         <div className="personal-route-info__routes">
           {array.map((personalRoute, index) =>
             <PersonalRouteInfoItem

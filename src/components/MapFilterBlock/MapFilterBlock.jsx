@@ -1,7 +1,7 @@
 import React from 'react';
 import './MapFilterBlock.scss';
 import MapPointsFilterItem from "../../UI-KIT/MapPointsFilterItem/MapPointsFilterItem.jsx";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {updateFilter} from "../../slices/placesSlice.js";
 
 export const MAP_OBJECT_FILTERS = [
@@ -14,13 +14,15 @@ export const MAP_OBJECT_FILTERS = [
 
 function MapFilterBlock() {
   const dispatch = useDispatch();
-  const pointsWithFilters = useSelector(state => state.places.placesWithFilters)
 
-  // const [state, setState] = useState(initState);
+  const handle = (filter) => {
+    dispatch(updateFilter(filter))
+  }
+
   return (
     <div className="map-filter-block">
       {MAP_OBJECT_FILTERS.map(filter =>
-        <MapPointsFilterItem onClick={dispatch(updateFilter(filter))}>
+        <MapPointsFilterItem key={filter} onClick={() => handle(filter)}>
           {filter}
         </MapPointsFilterItem>
       )}

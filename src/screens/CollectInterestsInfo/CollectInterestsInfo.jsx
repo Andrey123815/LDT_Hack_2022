@@ -20,8 +20,6 @@ function CollectInterestsInfo() {
     state => state.questionnaire.questionnaireChoice.interests
   );
 
-  console.log(selectedInterests)
-
   return (
     <QuestionnaireTemplate page={TEMPLATE_TYPE.collectInterestsInfo}>
       <div className="interest-info">

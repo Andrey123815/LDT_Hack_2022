@@ -5,13 +5,12 @@ import TitleSwitchItem from "../../UI-KIT/TitleSwitchItem/TitleSwitchItem.jsx";
 function TitleSwitcher(props) {
   return (
     <div className="title-switcher">
-      {props.titles.map((title, index) =>
+      {props.titles.map(title =>
         <TitleSwitchItem
-          status={props.titlesStatus[index]}
+          key={title}
+          isActive={title === props.activeTitle}
           onClick={() => {
-            props.setTitlesStatus(props.titlesStatus[index]
-              ? props.titlesStatus.slice().splice(index, 1, false)
-              : props.titlesStatus.slice().fill(false).splice(index, 1, true))
+            props.setActiveTitle(title)
           }}
         >
           {title}
