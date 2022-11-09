@@ -1,4 +1,4 @@
-<h2 align="center">[Скорее воспользуйтесь нашим сервисом!](https://www.sanviteam.tk/)</h2>
+<h2 align="center"><a href="https://www.sanviteam.tk/" target="_blank">Скорее воспользуйтесь нашим сервисом!</a></h2>
 ___
 
 <h2 align="center"><img src="https://github.com/Andrey123815/LDT_Hack_2022/blob/main/readme/1.png" alt="Sanvi Team"></h2>
