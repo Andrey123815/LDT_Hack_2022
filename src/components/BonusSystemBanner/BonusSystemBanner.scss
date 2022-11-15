@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
 
-  width: 50vw;
   height: 160px;
   padding: 25px 30px;
   background: #FFFFFF;
@@ -10,8 +9,11 @@
   color: #000000;
   gap: 50px;
 
-  position: absolute;
-  bottom: 2%;
+  @media screen and (min-width: 500px) {
+    width: 50vw;
+    position: absolute;
+    bottom: 2%;
+  }
 
   & > img {
     object-fit: cover;

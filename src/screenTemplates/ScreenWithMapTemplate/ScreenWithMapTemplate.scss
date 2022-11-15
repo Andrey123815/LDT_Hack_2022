@@ -5,12 +5,20 @@
   text-align: left;
   overflow: hidden;
 
+  @media screen and (max-width: 500px) {
+    overflow: auto;
+  }
+
   max-width: 100vw;
   max-height: 100vh;
 
   &__main-content {
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 500px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 }
 
@@ -21,12 +29,28 @@
     gap: 3.5%;
 
     width: 25%;
-    padding: 120px 40px 20px 30px;
+    padding: 19vh 30px 20px 30px;
     background: theme.$primary;
+
+    @media screen and (max-width: 500px) {
+      width: 100vw;
+      padding: 30px 20px 15px;
+      box-sizing: border-box;
+      & > div {
+        margin-bottom: 20px;
+      }
+    }
   }
   &__map {
     width: 75%;
-    height: 100vh;
+    @media screen and (min-width: 500px) {
+      width: 100vw;
+      height: 100vh;
+    }
+    @media screen and (max-width: 500px) {
+      width: 100vw;
+      min-height: 76vh;
+    }
   }
 }
 
@@ -36,6 +60,10 @@
     font-size: 45px;
     line-height: 46px;
     color: theme.$primaryTextColor;
+
+    @media screen and (max-width: 500px) {
+      margin-bottom: 20px;
+    }
   }
   &__body {
     display: flex;

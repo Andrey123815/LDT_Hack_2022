@@ -1,5 +1,6 @@
 import React from 'react';
 import './MainHeader.scss';
+import {isMobile} from "../../libraries/screenTypeCheck.js";
 
 const HEADER_ITEMS = {
   left: [
@@ -18,16 +19,22 @@ const HEADER_ITEMS = {
 };
 
 function MainHeader() {
+  const showMobileVersion = isMobile();
+
+  if (showMobileVersion) {
+    return null;
+  }
+
   return (
-    <div className="point-card-header">
-      <div className="point-card-header__left-part">
+    <div className="main-header">
+      <div className="main-header__left-part">
         {HEADER_ITEMS.left.map((item, index) =>
-          <span key={item.toString()} className="point-card-header__item">{item}</span>
+          <span key={item.toString()} className="main-header__item">{item}</span>
         )}
       </div>
-      <div className="point-card-header__right-part">
+      <div className="main-header__right-part">
         {HEADER_ITEMS.right.map(item =>
-          <span key={item.toString()} className="point-card-header__item">{item}</span>
+          <span key={item.toString()} className="main-header__item">{item}</span>
         )}
       </div>
     </div>
