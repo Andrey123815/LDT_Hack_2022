@@ -14,12 +14,13 @@ import {useGeolocation} from "./libraries/geolocation.js";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchInterests());
     dispatch(fetchPlaces());
   }, []);
 
   const [lng, ltd, status] = useGeolocation();
-  console.log(lng, ltd, status);
+  if (lng || ltd) {
+    console.log(lng, ltd, status);
+  }
 
   return (
     <div className="app">

@@ -26,19 +26,15 @@
   &__side-block {
     display: flex;
     flex-direction: column;
-    gap: 3.5%;
-
     width: 25%;
-    padding: 19vh 30px 20px 30px;
+    padding: 13vh 30px 20px 30px;
     background: theme.$primary;
 
     @media screen and (max-width: 500px) {
       width: 100vw;
-      padding: 30px 20px 15px;
+      padding: 30px 20px 20px;
       box-sizing: border-box;
-      & > div {
-        margin-bottom: 20px;
-      }
+      gap: 20px;
     }
   }
   &__map {
@@ -50,6 +46,7 @@
     @media screen and (max-width: 500px) {
       width: 100vw;
       min-height: 76vh;
+      position: relative;
     }
   }
 }

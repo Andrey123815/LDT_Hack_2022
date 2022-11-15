@@ -2,8 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 40px;
+}
 
-  &:nth-child(1) {
+.content-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 
+  @media screen and (max-width: 500px) {
+    gap: 30px;
   }
 }

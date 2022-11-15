@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {NAV_ROUTES} from "../../configurations/navigation.jsx";
 import {useSelector} from "react-redux";
 
-function InviteToLoyaltyProgram(props) {
+function InviteToLoyaltyProgram() {
   const isAuthInLoyaltySystem = useSelector(state => state.loyaltySystem.isAuth);
 
   if (isAuthInLoyaltySystem) {
@@ -22,7 +22,7 @@ function InviteToLoyaltyProgram(props) {
         <div className="content__invitation">
           Присоединяйтесь к программе лояльности «Друзья ВДНХ» и получайте скидки в кафе и ресторанах и на покупку билетов.
         </div>
-        <AccentButton theme="blue" onClick={() => navigate(NAV_ROUTES.verify)}>Войти в программу</AccentButton>
+        <AccentButton width="210px" theme="blue" onClick={() => navigate(NAV_ROUTES.verify)}>Войти в программу</AccentButton>
       </div>
       <div className="invite-to-loyalty-program__side-panel">
         <img src="/icons/share-object_red.svg" alt="share" />

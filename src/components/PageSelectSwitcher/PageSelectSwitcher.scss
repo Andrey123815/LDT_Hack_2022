@@ -1,0 +1,55 @@
+@use '../../configurations/theme' as theme;
+
+//*,
+//*::before,
+//*::after {
+//  box-sizing: border-box;
+//}
+
+.page-select-switcher {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  height: 35px;
+
+  & > * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  padding-left: 20px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  z-index: 16;
+}
+
+select.select {
+  width: 200px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.select__option {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
