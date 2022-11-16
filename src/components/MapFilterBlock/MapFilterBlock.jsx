@@ -1,7 +1,7 @@
 import React from 'react';
 import './MapFilterBlock.scss';
 import MapPointsFilterItem from "../../UI-KIT/MapPointsFilterItem/MapPointsFilterItem.jsx";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateFilter} from "../../slices/placesSlice.js";
 
 export const MAP_OBJECT_FILTERS = [
@@ -19,8 +19,10 @@ function MapFilterBlock() {
     dispatch(updateFilter(filter))
   }
 
+  const isAuthInLoyaltySystem = useSelector(state => state.loyaltySystem.isAuth);
+
   return (
-    <div className="map-filter-block">
+    <div style={{maxHeight: isAuthInLoyaltySystem ? '70vh' : '37%'}} className="map-filter-block">
       {MAP_OBJECT_FILTERS.map(filter =>
         <MapPointsFilterItem key={filter} onClick={() => handle(filter)}>
           {filter}

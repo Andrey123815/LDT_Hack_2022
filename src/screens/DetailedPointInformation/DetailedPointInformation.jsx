@@ -43,16 +43,16 @@ function DetailedPointInformation() {
             {TITLE_SWITCHER_ITEMS[activeTitle]}
           </article>
           <div className="info__control-buttons">
-            <AccentButton width={!isMobileVersion ? "250px" : ""}>Я иду сюда!</AccentButton>
-            <AccentButton width={!isMobileVersion ? "250px" : ""} theme="white">Купить билет</AccentButton>
+            <AccentButton width={!isMobileVersion ? "13vw" : ""}>Я иду сюда!</AccentButton>
+            <AccentButton width={!isMobileVersion ? "13vw" : ""} theme="white">Купить билет</AccentButton>
           </div>
           <BonusSystemBanner />
         </div>
         <div className="main-content__pictures">
           <img style={{objectFit: "cover"}} src="/images/test-img.jpg" width="100%" height="100%"  alt=""/>
           <div className="pictures__switch-block">
-            <BackQuestionnaireArrow />
-            <BackQuestionnaireArrow direction="right" />
+            <BackQuestionnaireArrow withoutBackLink={true}/>
+            <BackQuestionnaireArrow withoutBackLink={true} direction="right" />
           </div>
         </div>
       </div>

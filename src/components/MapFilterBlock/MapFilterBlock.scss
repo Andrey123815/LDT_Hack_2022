@@ -6,9 +6,17 @@
   flex-wrap: wrap;
   overflow: auto;
   max-height: 37%;
+  margin-bottom: 5px;
 
   @media screen and (max-width: 500px) {
     max-width: calc(100vw - 40px);
+  }
+
+  @media screen and (min-width: 1600px) {
+    min-height: 35vh;
+  }
+  @media screen and (max-width: 500px) {
+    overflow: unset;
   }
 
   padding: 15px 12px;

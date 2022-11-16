@@ -3,11 +3,10 @@
 .invite-to-loyalty-program {
   display: flex;
   flex-direction: row;
-  //justify-content: space-between;
   padding: 15px 20px 20px;
-  //height: 23%;
   background: theme.$sideMapBlocksBG;
   border-radius: 4px;
+  margin-bottom: 5px;
 
   &__content {
     display: flex;

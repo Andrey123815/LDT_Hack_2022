@@ -1,10 +1,16 @@
 .locations__content-block {
   display: flex;
   flex-direction: column;
-  //justify-content: space-between;
-  max-height: 58%;
-  gap: 2.5%;
-  padding-top: 15px;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1600px) {
+    max-height: calc(87vh - 125px);
+    padding-top: 15px;
+  }
+  @media screen and (min-width: 500px) {
+    max-height: calc(87vh - 165px);
+    padding-top: 15px;
+  }
 
   @media screen and (max-width: 500px) {
     gap: 30px;

@@ -8,7 +8,6 @@ import PageSelectSwitcher from "../../components/PageSelectSwitcher/PageSelectSw
 import {PAGES_SWITCHER_LINKS} from "../../configurations/pageSelectSwitcherItems.js";
 
 function ScreenWithMapTemplate(props) {
-  console.log(PAGES_SWITCHER_LINKS[props.currentPage])
   return (
     <div className="screen-with-map">
       <MainHeader/>

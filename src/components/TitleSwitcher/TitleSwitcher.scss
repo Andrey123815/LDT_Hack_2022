@@ -5,6 +5,9 @@
   gap: 30px;
 
   @media screen and (max-width: 500px) {
-    all: unset;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

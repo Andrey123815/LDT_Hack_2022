@@ -25,6 +25,7 @@
     @media screen and (min-width: 500px) {
       width: 58%;
       height: 100vh;
+      box-sizing: border-box;
       padding-top: 120px;
       padding-left: 53px;
     }
@@ -78,16 +79,22 @@
     font-size: 44px;
 
     @media screen and (max-width: 500px) {
-      font-size: 22px;
+      font-size: 20px;
       height: 8vh;
       line-height: 35px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: 500px) and (max-width: 1130px) {
+      font-size: 2.3em;
     }
 
     line-height: 58px;
     margin-bottom: 2.5%;
   }
   &__control-line {
-    max-width: 92%;
+    max-width: 94%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -101,14 +108,22 @@
     @media screen and (min-width: 500px) {
       flex-direction: row;
       gap: 20px;
-      position: absolute;
-      bottom: 28%;
+      position: fixed;
+      bottom: 27vh;
     }
   }
   &__object-description {
-    @media screen and (min-width: 500px) {
+    margin-bottom: 3%;
+    font-weight: 400;
+    font-size: 17px;
+    @media screen and (min-width: 1250px) {
       width: 70%;
-      margin-bottom: 3%;
+    }
+    @media screen and (max-width: 1450px) {
+      width: 80%;
+    }
+    @media screen and (max-width: 1250px) {
+      width: 90%;
     }
   }
 }

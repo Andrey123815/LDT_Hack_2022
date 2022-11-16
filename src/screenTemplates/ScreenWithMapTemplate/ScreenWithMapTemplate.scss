@@ -57,9 +57,8 @@
     font-size: 45px;
     line-height: 46px;
     color: theme.$primaryTextColor;
-
-    @media screen and (max-width: 500px) {
-      margin-bottom: 20px;
+    @media screen and (max-width: 1200px) {
+      font-size: 40px;
     }
   }
   &__body {
