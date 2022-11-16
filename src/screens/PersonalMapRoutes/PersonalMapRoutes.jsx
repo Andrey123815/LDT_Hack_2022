@@ -12,6 +12,7 @@ function PersonalMapRoutes() {
   const personalRoutes = useSelector(state => state.personalRoutes.personalRoutes);
   const array = ['', '', ''];
 
+  const [routesDistance, setRoutesDistance] = useState([1, 1, 1]);
   const [activeRouteNumbers, setActiveRouteNumbers] = useState(new Array(3).fill(false));
 
   let pointsInPersonalRoutes = personalRoutes.routes
@@ -23,6 +24,10 @@ function PersonalMapRoutes() {
         ? new Array(3).fill(false)
         : new Array(3).fill(false).map((item, index) => index === idx)
     )
+  }
+
+  const getRoutesDistances = (routesDistances) => {
+    setRoutesDistance(routesDistances);
   }
 
   const showAllRoutes = activeRouteNumbers.reduce(
@@ -38,6 +43,7 @@ function PersonalMapRoutes() {
         routes={personalRoutes.routes}
         statusRoutes={activeRouteNumbers.map(route => showAllRoutes || route)}
         currentPage={MAP_PAGES.PersonalMapRoutes}
+        getRouteDistance={getRoutesDistances}
       >
         <div className="content-block">
           <div className="personal-route-info__routes">
@@ -49,7 +55,7 @@ function PersonalMapRoutes() {
                 onClick={() => handlePersonalRouteChoose(index)}
                 active={activeRouteNumbers[index]}
                 duration={Number((personalRoutes.routes[index].duration/60).toFixed(1)) + 1.5}
-                distance="1"
+                distance={routesDistance[index]}
               />
             )}
           </div>

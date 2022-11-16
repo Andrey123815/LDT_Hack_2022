@@ -7,7 +7,7 @@ import {createPlacemark} from "../../libraries/placemark.js";
 import {isMobile} from "../../libraries/screenTypeCheck.js";
 
 const AppMap = React.memo((props) => {
-  const {places, routes, statusRoutes} = props;
+  const {places, routes, statusRoutes, getRouteDistance, routeToPointAvailable} = props;
   const [ymaps, setYmaps] = useState(null);
   const routeThemes = ['#1141bd', '#e5c233', '#2de5ac'];
   const mapRoutes = useRef(null);
@@ -28,6 +28,8 @@ const AppMap = React.memo((props) => {
       if (!firstAdd) {
         return;
       }
+
+      console.log('tuuuut')
 
       const personalRoutesOnMap = [];
       let i = 0;
@@ -60,7 +62,14 @@ const AppMap = React.memo((props) => {
       }
       // Кладем полученный маршрут в переменную
       mapRoutes.current = personalRoutesOnMap;
-      personalRoutesOnMap.forEach((singlePersonalMultiRoute) => ref.geoObjects.add(singlePersonalMultiRoute));
+      personalRoutesOnMap.forEach((singlePersonalMultiRoute) => {
+        ref.geoObjects.add(singlePersonalMultiRoute);
+      });
+      personalRoutesOnMap.forEach((singlePersonalMultiRoute) => {
+        console.log('singlePersonalMultiRoute.properties', singlePersonalMultiRoute.properties.get("distance"))
+      });
+
+      // getRouteDistance()
     }
   };
 
@@ -100,7 +109,7 @@ const AppMap = React.memo((props) => {
                   <Placemark
                     key={title + idx}
                     geometry={coordinates}
-                    properties={createBalloon(title, preview_text, pic, type_place || type)}
+                    properties={createBalloon(title, preview_text, pic, type_place || type, routeToPointAvailable)}
                     options={createPlacemark(type_place || type)}
                     modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
                   />

@@ -20,8 +20,14 @@ function ScreenWithMapTemplate(props) {
         <div className="main-content__map">
           <MapScaleBar/>
           <PageSelectSwitcher currentSelection={PAGES_SWITCHER_LINKS[props.currentPage]} />
-          <Map places={props.places} routes={props.routes} statusRoutes={props.statusRoutes}
-               allPoints={props.allPoints}/>
+          <Map
+            places={props.places}
+            routes={props.routes}
+            statusRoutes={props.statusRoutes}
+            allPoints={props.allPoints}
+            getRouteDistance={props.getRouteDistance}
+            routeToPointAvailable={props.routeToPointAvailable}
+          />
         </div>
       </div>
     </div>

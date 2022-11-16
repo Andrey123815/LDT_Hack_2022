@@ -17,6 +17,7 @@ function AllLocationPoints() {
         places={pointsWithFilters}
         allPoints={true}
         currentPage={MAP_PAGES.AllLocationPoints}
+        routeToPointAvailable={true}
       >
         <div className="locations__content-block">
           <MapFilterBlock/>
