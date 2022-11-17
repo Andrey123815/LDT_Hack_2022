@@ -54,6 +54,7 @@ const AppMap = React.memo((props) => {
       console.log('statusRoutes in getRoute', statusRoutes)
 
       let firstAdd = true;
+      console.log('start cycle')
       statusRoutes.forEach((status, idx) => {
         console.log('status in cycle', status, 'number', idx)
         if (!status) {
@@ -64,6 +65,7 @@ const AppMap = React.memo((props) => {
           ref.geoObjects.add(mapRoutes.current[idx])
         }
       })
+      console.log('end cycle')
 
       if (!firstAdd) {
         return;
