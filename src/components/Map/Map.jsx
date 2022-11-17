@@ -60,7 +60,7 @@ const AppMap = React.memo((props) => {
         if (!status) {
           firstAdd = false;
           ref.geoObjects.remove(mapRoutes.current[idx])
-          console.log('REMOVED', )
+          console.log('REMOVED', 'ref.geoObjects', ref.geoObjects, 'mapRoutes.current[idx]', mapRoutes.current[idx])
         } else if (mapRoutes.current && mapRoutes.current[idx]) {
           ref.geoObjects.add(mapRoutes.current[idx])
         }

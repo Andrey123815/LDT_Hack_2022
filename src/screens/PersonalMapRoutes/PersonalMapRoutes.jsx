@@ -19,6 +19,7 @@ function PersonalMapRoutes() {
     .map(({main, sup_points}) => main.map(place => place).concat(sup_points.map(places => places)));
 
   const handlePersonalRouteChoose = (idx) => {
+    console.log('handlePersonalRouteChoose idx', idx)
     setActiveRouteNumbers(
       activeRouteNumbers[idx]
         ? new Array(3).fill(false)
