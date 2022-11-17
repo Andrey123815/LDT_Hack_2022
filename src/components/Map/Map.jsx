@@ -31,23 +31,21 @@ const AppMap = React.memo((props) => {
     }
   }, [ymaps, lng, ltd]);
 
-  console.log('VEFORE EEFE S', mapRoutes.current)
-
-  useEffect(() => {
-    console.log('USE EFFECT')
-    const distances = [];
-    const durations = [];
-    console.log('mapRoutes.current', mapRoutes.current)
-    mapRoutes.current && mapRoutes.current.forEach((singlePersonalMultiRoute, idx) => {
-      const activeRoute = singlePersonalMultiRoute.getActiveRoute();
-      distances[idx] = activeRoute.properties.get("distance").text;
-      durations[idx] = activeRoute.properties.get("duration").text;
-      console.log("Длина: " + activeRoute.properties.get("distance").text);
-      console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
-    });
-    console.log('FINALY', distances, durations)
-    dispatch(updateRoutesInfo({routesDistance: distances, routesDuration: durations}));
-  }, [mapRoutes.current]);
+  // useEffect(() => {
+  //   console.log('USE EFFECT')
+  //   const distances = [];
+  //   const durations = [];
+  //   console.log('mapRoutes.current', mapRoutes.current)
+  //   mapRoutes.current && mapRoutes.current.forEach((singlePersonalMultiRoute, idx) => {
+  //     const activeRoute = singlePersonalMultiRoute.getActiveRoute();
+  //     distances[idx] = activeRoute.properties.get("distance").text;
+  //     durations[idx] = activeRoute.properties.get("duration").text;
+  //     console.log("Длина: " + activeRoute.properties.get("distance").text);
+  //     console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+  //   });
+  //   console.log('FINALY', distances, durations)
+  //   dispatch(updateRoutesInfo({routesDistance: distances, routesDuration: durations}));
+  // }, [mapRoutes.current]);
 
 
   const getRoute = (ref, routes, statusRoutes) => {
@@ -111,9 +109,9 @@ const AppMap = React.memo((props) => {
           const activeRoute = singlePersonalMultiRoute.getActiveRoute();
           // Вывод информации о маршруте.
           // const newDistances = Array.from(distances);
-          distances1[idx] = activeRoute.properties.get("distance").text;
+          // distances1[idx] = activeRoute.properties.get("distance").text;
           // const newTimings = Array.from(durations);
-          durations1[idx] = activeRoute.properties.get("duration").text;
+          // durations1[idx] = activeRoute.properties.get("duration").text;
 
 
 
