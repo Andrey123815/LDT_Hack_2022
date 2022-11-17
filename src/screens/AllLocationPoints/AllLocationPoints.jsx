@@ -1,15 +1,14 @@
 import React from 'react';
-import './FreeModeRoutes.scss';
+import './AllLocationPoints.scss';
 import ScreenWithMapTemplate from "../../screenTemplates/ScreenWithMapTemplate/ScreenWithMapTemplate.jsx";
 import NewLocationOffer from "../../components/NewLocationOffer/NewLocationOffer.jsx";
 import MapFilterBlock from "../../components/MapFilterBlock/MapFilterBlock.jsx";
 import InviteToLoyaltyProgram from "../../components/InviteToLoyaltyProgram/InviteToLoyaltyProgram.jsx";
 import {useSelector} from "react-redux";
+import {MAP_PAGES} from "../../configurations/pageSelectSwitcherItems.js";
 
-function FreeModeRoutes() {
+function AllLocationPoints() {
   const pointsWithFilters = useSelector(state => state.places.placesWithFilters)
-
-  console.log('pointsWithFilters', pointsWithFilters)
 
   return (
     <>
@@ -17,13 +16,17 @@ function FreeModeRoutes() {
         title="Выберите, что вас интересует"
         places={pointsWithFilters}
         allPoints={true}
+        currentPage={MAP_PAGES.AllLocationPoints}
+        routeToPointAvailable={true}
       >
-        <MapFilterBlock/>
-        <InviteToLoyaltyProgram />
-        <NewLocationOffer />
+        <div className="locations__content-block">
+          <MapFilterBlock/>
+          <InviteToLoyaltyProgram/>
+          <NewLocationOffer />
+        </div>
       </ScreenWithMapTemplate>
     </>
   );
 }
 
-export default FreeModeRoutes;
+export default AllLocationPoints;

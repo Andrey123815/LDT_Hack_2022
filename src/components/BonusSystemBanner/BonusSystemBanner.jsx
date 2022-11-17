@@ -1,10 +1,16 @@
 import React from 'react';
 import './BonusSystemBanner.scss';
+import {isMobile} from "../../libraries/screenTypeCheck.js";
 
 function BonusSystemBanner(props) {
+  const showMobileVersion = isMobile();
   return (
     <div className="bonus-system-banner">
-      <img src="/images/bonus-cards.png" width="40%" alt=""/>
+      <img
+        style={{position: showMobileVersion ? "relative" : "", right: showMobileVersion ? "10px" : ""}}
+        src="/images/bonus-cards.png" width={showMobileVersion ? '110%' : '40%'}
+        alt=""
+      />
       <div className="bonus-system-banner__info">
         <header className="info__header">Собирайте бонусы от ВДНХ!</header>
         <article className="info__invitation">

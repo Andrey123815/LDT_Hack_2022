@@ -4,7 +4,7 @@ import {QUEST_NAV_ROUTES, QUESTIONNAIRE_NAVIGATION} from "./subNavigation/questi
 import MainPage from "../screens/MainPage/MainPage.jsx";
 import DetailedPointInformation from "../screens/DetailedPointInformation/DetailedPointInformation.jsx";
 import PersonalMapRoutes from "../screens/PersonalMapRoutes/PersonalMapRoutes.jsx";
-import FreeModeRoutes from "../screens/FreeModeRoutes/FreeModeRoutes.jsx";
+import AllLocationPoints from "../screens/AllLocationPoints/AllLocationPoints.jsx";
 
 export const NAV_ROUTES = {
   root: '/',
@@ -12,7 +12,7 @@ export const NAV_ROUTES = {
   main: '/main',
   detailedPointInfo: '/detailed-point-info',
   personalRoutes: '/personal-routes',
-  freeModeRoutes: '/free-modes-routes',
+  allLocationPoints: '/all-location-points',
   ...QUEST_NAV_ROUTES
 }
 
@@ -39,8 +39,8 @@ export const NAVIGATION = {
       element: <PersonalMapRoutes/>
     },
     {
-      path: NAV_ROUTES.freeModeRoutes,
-      element: <FreeModeRoutes/>
+      path: NAV_ROUTES.allLocationPoints,
+      element: <AllLocationPoints/>
     },
   ],
   questionnaire: QUESTIONNAIRE_NAVIGATION,

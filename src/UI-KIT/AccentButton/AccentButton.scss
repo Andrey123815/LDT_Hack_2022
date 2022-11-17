@@ -1,5 +1,6 @@
 .accent-button {
   all: unset;
+  text-align: center;
   background: #336AF7;
   border-radius: 4px;
 
@@ -7,7 +8,7 @@
   color: #FFFFFF;
   cursor: pointer;
 
-  width: max-content;
+  //width: max-content;
   height: min-content;
 
   &:hover {

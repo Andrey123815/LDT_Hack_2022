@@ -17,6 +17,6 @@ export const ROUTE_TYPES = [
   {
     img: '/images/routeTypes/personal-routes.svg',
     description: 'Смотреть карту ВДНХ',
-    navigateTo: '/free-modes-routes',
+    navigateTo: '/all-location-points',
   },
 ];

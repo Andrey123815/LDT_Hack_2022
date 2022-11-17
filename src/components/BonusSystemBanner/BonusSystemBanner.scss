@@ -1,20 +1,20 @@
 .bonus-system-banner {
   display: flex;
   flex-direction: row;
-
-  width: 50vw;
-  height: 160px;
   padding: 25px 30px;
   background: #FFFFFF;
   border-radius: 8px;
   color: #000000;
   gap: 50px;
 
-  position: absolute;
-  bottom: 2%;
-
-  & > img {
-    object-fit: cover;
+  @media screen and (min-width: 500px) {
+    position: fixed;
+    bottom: 2%;
+    width: calc(54vw - 106px);
+  }
+  @media screen and (max-width: 500px) {
+    gap: 5px;
+    flex-direction: column-reverse;
   }
 
   &__info {
@@ -22,6 +22,9 @@
     flex-direction: column;
     justify-content: center;
     width: 40%;
+    @media screen and (max-width: 500px) {
+      width: unset;
+    }
   }
 }
 

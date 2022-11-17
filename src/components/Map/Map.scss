@@ -1,21 +1,33 @@
-.layer {
-  width: 100%;
-  height: 500px;
-  border: 1px solid;
+.ymaps-2-1-79-controls__control_toolbar {
+  position: absolute !important;
+  top: 12vh !important;
+  right: 30px !important;
 }
 
-.balloon {
+@mixin base-balloon {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  min-width: 360px;
   padding: 10px;
 
   box-sizing: border-box;
-  width: 360px;
   height: 130px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px 4px 0 0;
   background: #FFFFFF;
+}
+
+.balloon {
+  @include base-balloon;
+  justify-content: space-between;
+  gap: 10px;
+
+  &_route-balloon {;
+    @include base-balloon;
+    padding-left: 5px;
+    padding-top: 8px;
+    gap: 7px;
+  }
 
   &__object-img {
     object-fit: cover;
@@ -48,36 +60,59 @@
     letter-spacing: 0.1px;
     color: #000000;
   }
-  &__more-info-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 
-    width: 100px;
-    height: 25px;
-
-    box-sizing: border-box;
-    text-align: center;
-    background: #336AF7;
-    border-radius: 4px;
-    padding: 14px 78px;
-    color: #FFFFFF;
-    cursor: pointer;
-
-    & > span {
-      position: absolute;
-      top: 74%;
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-  }
-
-  &__mark {
+  &__mark_route-balloon {
     position: relative;
     top: -10px;
     left: 6px;
   }
+}
+
+@mixin base-balloon-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.placemark-type__icon {
+  width: 100%;
+  text-align: right;
+  position: relative;
+  bottom: 10px;
+}
+
+.button-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+  &__button_large {
+    padding: 14px 78px;
+    background: #336AF7;
+    width: 100px;
+    @include base-balloon-button;
+  }
+  &__button_small {
+    padding: 6px 20px;
+    @include base-balloon-button;
+  }
+}
+
+.blue {
+  min-width: 140px;
+  padding: unset;
+  background: #336AF7;
+}
+
+.gradient {
+  background: linear-gradient(179.19deg, #E22C38 0%, #203AEB 103.93%);
 }
 
 .ymaps-2-1-79-balloon__close {
@@ -86,7 +121,7 @@
 
 .ymaps-2-1-79-balloon__close+.ymaps-2-1-79-balloon__content {
   margin-right: 0 !important;
-  border-bottom: 5px solid #E22C38;
+  //border-bottom: 5px solid #E22C38;
 }
 
 .ymaps-2-1-79-map ymaps, .ymaps-2-1-79-map ymaps:after, .ymaps-2-1-79-map ymaps:before {
@@ -95,4 +130,12 @@
 
 .ymaps-2-1-79-balloon_to_top .ymaps-2-1-79-balloon__tail {
   opacity: 0;
+}
+
+.balloon-border {
+  min-width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

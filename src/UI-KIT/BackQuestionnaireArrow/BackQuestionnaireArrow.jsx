@@ -8,10 +8,18 @@ function BackQuestionnaireArrow(props) {
   }
 
   const navigate = useNavigate();
-
   return (
-    <div className="back-questionnaire-arrow" onClick={() => navigate(-1)}>
-      <img style={{transform: props.direction === 'right' ? 'rotate(180deg)' : 'rotate(0deg)'}} src="/icons/back-questionnaire-arrow.svg" alt="Назад" />
+    <div className="back-questionnaire-arrow" onClick={() => {if (!props.withoutBackLink) navigate(-1)}}>
+      <img
+        style={{
+          position: "absolute",
+          top: "20%",
+          right: props.direction === 'right' ? '15%' : '',
+          left: props.direction === 'left' || !props.direction ? '15%' : '',
+          transform: props.direction === 'right' ? 'rotate(180deg)' : 'rotate(0deg)'
+        }}
+        src="/icons/back-questionnaire-arrow.svg" alt="Назад"
+      />
     </div>
   );
 }

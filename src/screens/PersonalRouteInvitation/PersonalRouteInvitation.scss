@@ -4,6 +4,10 @@
   margin: auto;
 }
 
+.personal-route-invitation button {
+  margin-bottom: 20px;
+}
+
 .personal-route {
   &__explanation {
     color: theme.$routeExplanationText;
@@ -15,9 +19,13 @@
     margin-top: 6%;
     margin-bottom: 20%;
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 650px) {
       width: 45%;
-      margin: 30px auto 60px auto;
+      //margin: 30px auto 60px auto;
+    }
+    @media screen and (max-height: 650px) {
+      margin-bottom: 12%;
+      //margin: 30px auto 60px auto;
     }
 
     &_accent {

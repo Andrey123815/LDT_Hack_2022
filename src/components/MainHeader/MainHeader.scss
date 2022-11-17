@@ -6,11 +6,16 @@
   justify-content: space-between;
 }
 
-.point-card-header {
+.main-header {
   width: 95%;
   height: 80px;
   color: theme.$primary;
   @include base-header;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+
   padding-left: 6px;
   padding-right: 24px;
   background: #FFFFFF;
