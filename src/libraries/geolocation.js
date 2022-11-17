@@ -12,7 +12,6 @@ export const useGeolocation = () => {
   const [status, setStatus] = useState(null);
 
   const successLocating = position => {
-    setStatus('success geolocation');
     setLat(position.coords.latitude);
     setLng(position.coords.longitude);
   }

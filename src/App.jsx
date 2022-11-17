@@ -6,21 +6,14 @@ import {
 } from 'react-router-dom';
 import {NAVIGATION} from "./configurations/navigation.jsx";
 import {useEffect} from "react";
-import {fetchInterests} from "./api/interestsAPI.js";
 import {useDispatch} from "react-redux";
 import {fetchPlaces} from "./api/placesAPI.js";
-import {useGeolocation} from "./libraries/geolocation.js";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPlaces());
   }, []);
-
-  const [lng, ltd, status] = useGeolocation();
-  if (lng || ltd) {
-    console.log(lng, ltd, status);
-  }
 
   return (
     <div className="app">

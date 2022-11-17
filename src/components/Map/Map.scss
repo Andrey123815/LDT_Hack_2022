@@ -1,3 +1,9 @@
+.ymaps-2-1-79-controls__control_toolbar {
+  position: absolute !important;
+  top: 12vh !important;
+  right: 30px !important;
+}
+
 @mixin base-balloon {
   display: flex;
   flex-direction: row;
