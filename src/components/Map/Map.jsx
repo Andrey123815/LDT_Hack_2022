@@ -51,11 +51,15 @@ const AppMap = React.memo((props) => {
   const getRoute = (ref, routes, statusRoutes) => {
     if (ymaps && routes) {
 
+      console.log('statusRoutes in getRoute', statusRoutes)
+
       let firstAdd = true;
       statusRoutes.forEach((status, idx) => {
+        console.log('status in cycle', status, 'number', idx)
         if (!status) {
           firstAdd = false;
           ref.geoObjects.remove(mapRoutes.current[idx])
+          console.log('REMOVED', )
         } else if (mapRoutes.current && mapRoutes.current[idx]) {
           ref.geoObjects.add(mapRoutes.current[idx])
         }
@@ -96,17 +100,15 @@ const AppMap = React.memo((props) => {
       }
       // Кладем полученный маршрут в переменную
       mapRoutes.current = personalRoutesOnMap;
-      personalRoutesOnMap.forEach((singlePersonalMultiRoute) => {
-        ref.geoObjects.add(singlePersonalMultiRoute);
-      });
+      personalRoutesOnMap.forEach((singlePersonalMultiRoute) => ref.geoObjects.add(singlePersonalMultiRoute));
 
       // const distances1 = new Array(3);
       // const durations1 = new Array(3);
 
-      personalRoutesOnMap.forEach((singlePersonalMultiRoute, idx) => {
-        singlePersonalMultiRoute.model.events.add('requestsuccess', function() {
+      // personalRoutesOnMap.forEach((singlePersonalMultiRoute, idx) => {
+      //   singlePersonalMultiRoute.model.events.add('requestsuccess', function() {
           // Получение ссылки на активный маршрут.
-          const activeRoute = singlePersonalMultiRoute.getActiveRoute();
+          // const activeRoute = singlePersonalMultiRoute.getActiveRoute();
           // Вывод информации о маршруте.
           // const newDistances = Array.from(distances);
           // distances1[idx] = activeRoute.properties.get("distance").text;
@@ -121,15 +123,15 @@ const AppMap = React.memo((props) => {
 
           // console.log(idx, newDistances[idx], newTimings[idx])
 
-          console.log("Длина: " + activeRoute.properties.get("distance").text);
-          console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
+          // console.log("Длина: " + activeRoute.properties.get("distance").text);
+          // console.log("Время прохождения: " + activeRoute.properties.get("duration").text);
           // Для автомобильных маршрутов можно вывести
           // информацию о перекрытых участках.
           // if (activeRoute.properties.get("blocked")) {
-          console.log("-----------------------------------------------------");
+          // console.log("-----------------------------------------------------");
           // }
-        });
-      });
+        // });
+      // });
 
       // setTimeout(() => {
       //   dispatch(updateRoutesInfo({routesDistance: distances1, routesDuration: durations1}))
